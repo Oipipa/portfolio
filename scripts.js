@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
         \\[
         M_{bulge} = M_{central} \\times \\left( \\frac{r}{r + 10} \\right)
         \\]
-        <p>This formula decreases the influence of the central mass as the distance increases, simulating the gravitational pull exerted by the dense core or bulge.</p>
     
         <h4>Halo Mass</h4>
         <p>The simulation also includes a galactic halo, which extends beyond the central bulge and is made up of dark matter and other less dense material. The mass of this halo contributes to the gravitational forces and is calculated using a logarithmic model:</p>
