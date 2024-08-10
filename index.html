@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anubhav Lamsal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <!-- Custom Fonts -->
+    <style>
+        @font-face {
+            font-family: 'Daydream';
+            src: url('fonts/Daydream.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Caudex';
+            src: url('fonts/Caudex.ttf') format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-page">
+        <h1>Hi, I am Anubhav</h1>
+        <div class="buttons">
+            <button id="aboutBtn">About</button>
+            <button id="projectsBtn">Projects</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+        <div class="content">
+            <div id="closeButton" class="close-button"></div>
+            
+            <!-- About Section -->
+            <div id="aboutSection" class="section hidden">
+                <h2 class="about-title">About</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Placeholder Placeholder Placeholder like Placeholder Placeholder like Placeholder</p>
+                        <p>Placeholder Placeholder Placeholder like Placeholder Placeholder like Placeholder</p>
+                    </div>
+                    <div id="gravitySimulation">
+                        <canvas id="simulationCanvas" width="800" height="800"></canvas>
+                        <div id="controls">
+                            <label for="numParticles">Particles (N):</label>
+                            <input type="range" id="numParticles" name="numParticles" min="1000" max="20000" step="1000" value="8000">
+                    
+                            <label for="gravity">Gravity (G):</label>
+                            <input type="range" id="gravity" name="gravity" min="0.1" max="10" step="0.1" value="1">
+                    
+                            <label for="centralMass">Central Mass (M):</label>
+                            <input type="range" id="centralMass" name="centralMass" min="10000" max="100000" step="1000" value="50000">
+                        </div>
+                        <button class="readme-button" data-simulation="galaxySimulator">README</button>
+                    </div>
+                </div>                    
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projectsSection" class="section hidden">
+                <h2 class="projects-title">Projects</h2>
+                <div class="projects-simulations">
+                    <div class="project-item">
+                        <h3>Double Pendulum Simulation</h3>
+                        <canvas id="doublePendulumCanvas" width="400" height="400"></canvas>
+                        <div id="controls" class="slider-container">
+                            <label for="mass1">Mass 1 (m1):</label>
+                            <input type="range" id="mass1" min="0.5" max="5" step="0.1" value="1">
+                            <span id="mass1Value">1.0</span>
+                            <br>
+                            <label for="mass2">Mass 2 (m2):</label>
+                            <input type="range" id="mass2" min="0.5" max="5" step="0.1" value="1">
+                            <span id="mass2Value">1.0</span>
+                        </div>
+                        <button class="readme-button" data-simulation="doublePendulum">README</button>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <h4>Maze solver</h4>
+                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
+                            </div>
+                            <div class="project-card">
+                                <h4>Project 2</h4>
+                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <h3>Bloch Sphere Simulation</h3>
+                        <canvas id="blochSphereCanvas" width="400" height="400"></canvas>
+                        <div id="controls" class="slider-container">
+                            <label for="realSlider">Real Part (α):</label>
+                            <input type="range" id="realSlider" min="-1" max="1" step="0.01" value="0.7">
+                            <span id="realValue">0.70</span>
+                            <br>
+                            <label for="imaginarySlider">Imaginary Part (β):</label>
+                            <input type="range" id="imaginarySlider" min="-1" max="1" step="0.01" value="0.7">
+                            <span id="imaginaryValue">0.70</span>
+                        </div>
+                        <button class="readme-button" data-simulation="blochSphere">README</button>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <h4>Maze solver</h4>
+                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
+                            </div>
+                            <div class="project-card">
+                                <h4>Project 2</h4>
+                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for README -->
+    <div id="readmeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="latexContent"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="gravitySimulation.js"></script>
+    <script src="doublePendulumSimulation.js"></script>
+    <script src="blochSphereSimulation.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
