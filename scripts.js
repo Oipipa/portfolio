@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             \\frac{d\\omega_2}{dt} &= \\frac{2\\sin(\\theta_1-\\theta_2)(\\omega_1^2L_1(m_1+m_2) + g(m_1+m_2)\\cos\\theta_1 + \\omega_2^2L_2m_2\\cos(\\theta_1-\\theta_2))}{L_2(2m_1+m_2-m_2\\cos(2\\theta_1-2\\theta_2))}
             \\end{aligned}
             \\]
-            <p>The system exhibits highly sensitive dependence on initial conditions, a hallmark of chaotic systems.</p>
+            <p>These equations take into account the masses \\(m_1\\) and \\(m_2\\) of the pendulums, the lengths \\(L_1\\) and \\(L_2\\) of their arms, and the acceleration due to gravity \\(g\\). The system exhibits highly sensitive dependence on initial conditions, a hallmark of chaotic systems.</p>
         `,
         blochSphere: `
             <h3>Bloch Sphere Simulation</h3>
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         \\[
         M_{bulge} = M_{central} \\times \\left( \\frac{r}{r + 10} \\right)
         \\]
+        <p>This formula decreases the influence of the central mass as the distance increases, simulating the gravitational pull exerted by the dense core or bulge.</p>
     
         <h4>Halo Mass</h4>
         <p>The simulation also includes a galactic halo, which extends beyond the central bulge and is made up of dark matter and other less dense material. The mass of this halo contributes to the gravitational forces and is calculated using a logarithmic model:</p>
