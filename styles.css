@@ -44,7 +44,7 @@ button:hover {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -70,6 +70,8 @@ button:hover {
     padding: 20px;
     width: 90%;
     max-width: 600px;
+    overflow-y: auto;
+    max-height: 80vh; /* Ensure content doesn’t exceed 80% of viewport height */
     overflow-y: auto;
 }
 
