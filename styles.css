@@ -71,7 +71,7 @@ button:hover {
     width: 90%;
     max-width: 600px;
     overflow-y: auto;
-    max-height: 80vh; /* Ensure content doesn’t exceed 80% of viewport height */
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -130,7 +130,6 @@ button:hover {
     }
 }
 
-/* About Section Title */
 .about-title {
     font-family: 'Daydream', sans-serif;
     font-size: 2rem;
@@ -142,7 +141,6 @@ button:hover {
     z-index: 102;
 }
 
-/* About Section Content */
 .about-content {
     position: fixed;
     top: 20%;
@@ -155,7 +153,6 @@ button:hover {
     z-index: 101;
 }
 
-/* Main Text Column */
 .about-text {
     width: 35%;
     height: 100%;
@@ -167,7 +164,6 @@ button:hover {
     line-height: 1.6;
 }
 
-/* Extra Content Column (Games and Simulations) */
 .about-extra {
     width: 63%;
     height: 100%;
@@ -209,7 +205,6 @@ button:hover {
     border: 2px;
 }
 
-/* Custom scrollbar styling for the simulation container */
 #gravitySimulation::-webkit-scrollbar {
     width: 12px;
 }
@@ -249,11 +244,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 150px; /* Ensures a consistent width for each control */
+    min-width: 150px; 
 }
 
 #controls label {
-    font-size: 0.9em; /* Keep label size */
+    font-size: 0.9em; 
     color: #ffe7d6;
     font-family: 'Caudex', serif;
     margin-bottom: 5px;
@@ -261,9 +256,9 @@ button:hover {
 
 #controls input[type="range"] {
     -webkit-appearance: none;
-    width: 150px; /* Keep slider width */
-    height: 4px; /* Keep slider height */
-    background: #ff0000; /* Track color */
+    width: 150px; 
+    height: 4px; 
+    background: #ff0000; 
     border-radius: 5px;
     outline: none;
     transition: background-color 0.2s, transform 0.1s;
@@ -272,17 +267,17 @@ button:hover {
 #controls input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px; /* Keep thumb size */
-    height: 12px; /* Keep thumb size */
-    background: #ffe7d6; /* Thumb color */
+    width: 12px; 
+    height: 12px;
+    background: #ffe7d6;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
 }
 
 #controls input[type="range"]::-webkit-slider-thumb:hover {
-    background: #ff8080; /* Thumb hover color */
-    transform: scale(1.2); /* Slightly enlarge thumb on hover */
+    background: #ff8080; 
+    transform: scale(1.2); 
 }
 
 #controls input[type="range"]::-moz-range-thumb {
@@ -301,17 +296,16 @@ button:hover {
 
 @media (max-width: 600px) {
     .control-group {
-        flex-basis: 100%; /* Ensure controls stack vertically on small screens */
+        flex-basis: 100%; 
         align-items: stretch;
     }
 
     #controls {
-        gap: 10px; /* Reduce gap on smaller screens */
+        gap: 10px; 
     }
 }
 
 
-/* Projects Section Title */
 .projects-title {
     font-family: 'Daydream', sans-serif;
     font-size: 2rem;
@@ -323,7 +317,6 @@ button:hover {
     z-index: 102;
 }
 
-/* Container for the Simulations */
 .projects-simulations {
     position: fixed;
     top: 20%;
@@ -337,14 +330,13 @@ button:hover {
     z-index: 101;
 }
 
-/* Individual Project Item (Simulation) */
 .project-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;  /* Ensure the items take equal space */
-    max-width: 45%;  /* Limit the max width to 45% of the container */
+    flex: 1;  
+    max-width: 45%;  
 }
 
 .project-item h3 {
@@ -354,14 +346,12 @@ button:hover {
     text-align: center;
 }
 
-/* Canvas Styling */
 canvas {
     border: 2px;
-    width: 100%;  /* Make canvas responsive within its container */
-    height: auto; /* Auto height to maintain aspect ratio */
+    width: 100%;  
+    height: auto; 
 }
 
-/* Container for the Project Contents */
 .projects-contents {
     position: fixed;
     top: 60%;
@@ -374,7 +364,6 @@ canvas {
     font-family: 'Caudex', serif;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .projects-simulations {
         flex-direction: column;
@@ -382,13 +371,13 @@ canvas {
     }
 
     .project-item {
-        width: 100%;  /* Full width for smaller screens */
-        max-width: 100%;  /* Ensure no limit on width */
+        width: 100%;  
+        max-width: 100%;  
     }
 
     canvas {
         width: 100%;
-        height: auto; /* Maintain aspect ratio */
+        height: auto; 
     }
 
     .projects-contents {
@@ -418,29 +407,28 @@ canvas {
     color: #73464c;
     margin-left: 10px;
 }
-/* Modal Styling with Fade-In Animation */
+
 .modal {
     display: none;
     position: fixed;
     z-index: 105;
-    left: 50%; /* Center horizontally */
-    top: 50%; /* Center vertically */
-    transform: translate(-50%, -50%); /* Shift back by 50% of own width and height */
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
     width: 90%;
     max-width: 800px;
-    max-height: 80%; /* Ensure it doesn't exceed the screen height */
-    overflow-y: auto; /* Scroll if content is too tall */
-    background-color: #000000; /* Black background for the modal */
+    max-height: 80%; 
+    overflow-y: auto; 
+    background-color: #000000; 
     padding: 20px;
-    border: 2px solid #a8275d; /* Red outline */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Subtle shadow for the modal */
+    border: 2px solid #a8275d; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); 
     border-radius: 10px;
-    color: #ffe7d6; /* Light text color for contrast */
+    color: #ffe7d6; 
     font-family: 'Caudex', serif;
-    animation: fadeIn 0.5s ease; /* Added fade-in animation */
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Keyframes for Fade-In Effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -450,13 +438,12 @@ canvas {
     }
 }
 
-/* Close Button inside Modal */
 .modal .close {
-    color: #a8275d; /* Red color for close button to match the outline */
-    position: absolute; /* Absolute positioning within modal */
+    color: #a8275d; 
+    position: absolute; 
     top: 10px;
     right: 10px;
-    font-size: 30px; /* Slightly smaller size */
+    font-size: 30px; 
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -464,54 +451,49 @@ canvas {
 
 .modal .close:hover,
 .modal .close:focus {
-    color: #ff8080; /* Lighter red on hover */
+    color: #ff8080; 
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Style for <h3> headings in README modal */
 .modal-content h3 {
     font-family: 'Daydream', sans-serif;
-    font-size: 1.8rem; /* Slightly smaller than main titles */
-    color: #a8275d; /* Matches the close button and border color */
+    font-size: 1.8rem; 
+    color: #a8275d; 
     margin-bottom: 10px;
-    text-align: center; /* Centers the heading */
-    text-transform: uppercase; /* Makes the heading uppercase */
-    letter-spacing: 1px; /* Adds some spacing between letters */
+    text-align: center; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 
-/* Style for <h4> headings in README modal */
 .modal-content h4 {
     font-family: 'Caudex', serif;
-    font-size: 1.5rem; /* Smaller than <h3> but larger than paragraph text */
-    color: #73464c; /* Matches the overall color scheme */
+    font-size: 1.5rem; 
+    color: #73464c; 
     margin-top: 20px;
     margin-bottom: 10px;
-    text-align: left; /* Aligns the heading to the left */
-    border-bottom: 2px solid #a8275d; /* Adds an underline for emphasis */
-    padding-bottom: 5px; /* Adds some space below the heading */
+    text-align: left; 
+    border-bottom: 2px solid #a8275d; 
+    padding-bottom: 5px; 
 }
 
-/* Grid Container for Project Cards */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default to 4 columns */
-    gap: 10px; /* Space between cards */
-    margin-top: 30px; /* Space above the grid */
-    padding: 20px; /* Padding inside the grid */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    margin-top: 30px; 
+    padding: 20px; 
 }
 
-/* Individual Project Card */
 .project-card {
-    background-color: #000000; /* Background color for the card */
-    border: 2px solid #ff0000; /* Border color */
-    border-radius: 10px; /* Rounded corners */
-    padding: 15px; /* Padding inside the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    background-color: #000000; 
+    border: 2px solid #ff0000; 
+    border-radius: 10px; 
+    padding: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Heading in Project Card */
 .project-card h4 {
     font-family: 'Daydream', sans-serif;
     font-size: 1.8rem;
@@ -519,7 +501,6 @@ canvas {
     margin-bottom: 10px;
 }
 
-/* Paragraph in Project Card */
 .project-card p {
     font-family: 'Caudex', serif;
     font-size: 1rem;
@@ -527,60 +508,57 @@ canvas {
     line-height: 1.6;
 }
 
-/* Hover Effect for Project Card */
 .project-card:hover {
-    transform: translateY(-5px); /* Lift the card slightly */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
 
-/* Responsive Design: Adjust Grid for Different Screen Sizes */
 @media (max-width: 1200px) {
     .projects-grid {
-        grid-template-columns: repeat(1, 1fr); /* 3 cards per row on medium screens */
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
 
 @media (max-width: 768px) {
     .projects-grid {
-        grid-template-columns: repeat(1, 1fr); /* 2 cards per row on small screens */
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
 
 @media (max-width: 500px) {
     .projects-grid {
-        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+        grid-template-columns: 1fr; 
     }
 
     .project-card {
-        padding: 10px; /* Less padding on smaller screens */
+        padding: 10px; 
     }
 
     .project-card h4 {
-        font-size: 1.3rem; /* Smaller heading font on smaller screens */
+        font-size: 1.3rem; 
     }
 
     .project-card p {
-        font-size: 0.9rem; /* Smaller text font on smaller screens */
+        font-size: 0.9rem; 
     }
 }
 
 @media (max-width: 768px) {
-    /* Ensure overlay covers the entire viewport */
     .overlay {
-        position: absolute; /* Use absolute positioning on mobile */
+        position: absolute; 
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Use viewport height to cover entire screen */
-        background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+        height: 100vh; 
+        background-color: rgba(0, 0, 0, 0.9); 
         display: flex;
         justify-content: center;
-        align-items: flex-start; /* Align items to the top */
+        align-items: flex-start;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.5s ease, visibility 0.5s ease;
         z-index: 100;
-        overflow-y: auto; /* Allow scrolling */
+        overflow-y: auto;
     }
 
     .overlay.active {
@@ -595,14 +573,13 @@ canvas {
         padding: 20px;
         width: 90%;
         max-width: 600px;
-        max-height: 80vh; /* Ensure content doesn’t exceed 80% of viewport height */
-        overflow-y: auto; /* Scroll inside content if needed */
-        margin-top: 20px; /* Space at the top */
-        background-color: #1e1e1e; /* Background for better readability */
+        max-height: 80vh; 
+        overflow-y: auto; 
+        margin-top: 20px; 
+        background-color: #1e1e1e; 
         border-radius: 10px;
     }
 
-    /* Adjust the about and projects sections */
     .about-content,
     .projects-simulations {
         position: relative;
@@ -611,19 +588,18 @@ canvas {
         width: 100%;
         height: auto;
         padding: 10px;
-        display: block; /* Ensure content stacks vertically on mobile */
+        display: block; 
     }
 
     .about-title,
     .projects-title {
-        font-size: 1.5rem; /* Smaller title for mobile */
-        position: relative; /* No fixed position to avoid overlap issues */
+        font-size: 1.5rem;
+        position: relative;
         top: auto;
         left: auto;
         margin: 10px 0;
     }
     
-    /* Make sure the close button is easily accessible on mobile */
     .close-button {
         top: 10px;
         right: 10px;
@@ -632,11 +608,10 @@ canvas {
     }
 }
 
-/* Additional adjustments if needed for very small screens */
 @media (max-width: 500px) {
     .content {
-        width: 95%; /* More space on very small screens */
-        padding: 10px; /* Smaller padding */
+        width: 95%; 
+        padding: 10px; 
     }
     
     .close-button {
