@@ -6,7 +6,6 @@
     <title>Anubhav Lamsal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
-    <!-- Custom Fonts -->
     <style>
         @font-face {
             font-family: 'Daydream';
@@ -32,7 +31,6 @@
         <div class="content">
             <div id="closeButton" class="close-button"></div>
             
-            <!-- About Section -->
             <div id="aboutSection" class="section hidden">
                 <h2 class="about-title">About</h2>
                 <div class="about-content">
@@ -75,6 +73,9 @@
                             <span id="mass2Value">1.0</span>
                         </div>
                         <button class="readme-button" data-simulation="doublePendulum">README</button>
+                    </div>
+                    <div class="project-item">
+
                         <div class="projects-grid">
                             <div class="project-card">
                                 <h4>Maze solver</h4>
@@ -83,26 +84,8 @@
                             <div class="project-card">
                                 <h4>Project 2</h4>
                                 <button class="readme-button" data-simulation="galaxySimulator">README</button>
-
+    
                             </div>
-
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <h3>Bloch Sphere Simulation</h3>
-                        <canvas id="blochSphereCanvas" width="400" height="400"></canvas>
-                        <div id="controls" class="slider-container">
-                            <label for="realSlider">Real Part (α):</label>
-                            <input type="range" id="realSlider" min="-1" max="1" step="0.01" value="0.7">
-                            <span id="realValue">0.70</span>
-                        </div>
-                        <div id="controls" class="slider-container">
-                            <label for="imaginarySlider">Imaginary Part (β):</label>
-                            <input type="range" id="imaginarySlider" min="-1" max="1" step="0.01" value="0.7">
-                            <span id="imaginaryValue">0.70</span>
-                        </div>
-                        <button class="readme-button" data-simulation="blochSphere">README</button>
-                        <div class="projects-grid">
                             <div class="project-card">
                                 <h4>Maze solver</h4>
                                 <button class="readme-button" data-simulation="galaxySimulator">README</button>
@@ -120,7 +103,6 @@
         </div>
     </div>
 
-    <!-- Modal for README -->
     <div id="readmeModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -128,7 +110,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="scripts.js"></script>
     <script src="gravitySimulation.js"></script>
     <script src="doublePendulumSimulation.js"></script>
