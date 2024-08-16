@@ -95,7 +95,7 @@ function doublePendulumSimulation() {
     let m2 = parseFloat(document.getElementById('mass2').value);
     let L1 = 100, L2 = 100, theta1 = Math.PI / 2, theta2 = Math.PI / 2;
     let pendulum = new DoublePendulum(m1, m2, L1, L2, theta1, theta2);
-    const timeStep = 0.1;
+    const timeStep = 0.4;
 
     const mass1Slider = document.getElementById('mass1');
     const mass2Slider = document.getElementById('mass2');

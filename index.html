@@ -26,8 +26,10 @@
             <button id="projectsBtn">Projects</button>
         </div>
     </div>
-
+    
     <div id="overlay" class="overlay hidden">
+        <div id="gameOfLifeCanvasContainer"></div> <!-- Container for Conway's Game of Life -->
+        <div id="aboutCanvasContainer"></div>
         <div class="content">
             <div id="closeButton" class="close-button"></div>
             
@@ -55,11 +57,10 @@
                 </div>                    
             </div>
 
-            <!-- Projects Section -->
             <div id="projectsSection" class="section hidden">
                 <h2 class="projects-title">Projects</h2>
                 <div class="projects-simulations">
-                    <div class="project-item">
+                    <div class="simulation-item">
                         <h3>Double Pendulum Simulation</h3>
                         <canvas id="doublePendulumCanvas" width="400" height="400"></canvas>
                         <div id="controls" class="slider-container">
@@ -74,47 +75,47 @@
                         </div>
                         <button class="readme-button" data-simulation="doublePendulum">README</button>
                     </div>
-                    <div class="project-item">
-
-                        <div class="projects-grid">
-                            <div class="project-card">
-                                <h4>Maze solver</h4>
-                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
+            
+                    <div class="projects-container">
+            
+                        <div class="project-card active">
+                            <div class="card-content">
+                                <h4>Project Title 1</h4>
+                                <button class="readme-button" data-simulation="doublePendulum">README</button>
                             </div>
-                            <div class="project-card">
-                                <h4>Project 2</h4>
-                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
-    
-                            </div>
-                            <div class="project-card">
-                                <h4>Maze solver</h4>
-                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
-                            </div>
-                            <div class="project-card">
-                                <h4>Project 2</h4>
-                                <button class="readme-button" data-simulation="galaxySimulator">README</button>
-
-                            </div>
-
                         </div>
+            
+                        <div class="project-card">
+                            <div class="card-content">
+                                <h4>Project Title 2</h4>
+                                <button class="readme-button" data-simulation="doublePendulum">README</button>
+                            </div>
+                        </div>
+                        <div class="arrow-controls">
+                            <button id="arrowUp">&#9664;</button> 
+                            <button id="arrowDown">&#9654;</button> 
+                        </div>
+            
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div id="readmeModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="latexContent"></div>
+            
+            <div id="readmeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="latexContent"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="scripts.js"></script>
     <script src="gravitySimulation.js"></script>
     <script src="doublePendulumSimulation.js"></script>
-    <script src="blochSphereSimulation.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="conway.js"></script>
+    <script src="brian.js"></script>
+
 </body>
 </html>

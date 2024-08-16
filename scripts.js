@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Cache elements for efficiency
     const aboutBtn = document.getElementById("aboutBtn");
     const projectsBtn = document.getElementById("projectsBtn");
     const overlay = document.getElementById("overlay");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const latexContent = document.getElementById("latexContent");
     const modalCloseButton = document.querySelector(".modal .close");
 
-    // LaTeX content for each simulation
     const latexEquations = {
         doublePendulum: `
             <h3>Double Pendulum Simulation</h3>
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             \\]
             <p>where:</p>
             \\[
-            \\alpha = \\cos\\left(\\frac{\\theta}{2}\\right), \\quad \\beta = e^{i\\phi}\\sin\\left(\\frac{\\theta}{2}\\right)
+            \\alpha = \\cos\\left(\\frac{\\theta}{2}\\right), \\beta = e^{i\\phi}\\sin\\left(\\frac{\\theta}{2}\\right)
             \\]
             <p>Here, \\(\\theta\\) and \\(\\phi\\) are the spherical coordinates that determine the position of the qubit on the Bloch sphere. The angles are related to the quantum state parameters \\(\\alpha\\) and \\(\\beta\\) (with \\(|\\alpha|^2 + |\\beta|^2 = 1\\)). This simulation allows you to visualize how these parameters affect the qubit's position on the sphere.</p>
         `,
@@ -89,32 +87,26 @@ document.addEventListener("DOMContentLoaded", function() {
             <li><strong>M_{total}</strong> is the combined mass of the central mass, bulge, and halo contributing to the gravitational pull at distance <strong>r</strong>.</li>
             <li><strong>r</strong> is the distance of the particle from the galactic center.</li>
         </ul>
-        
     `
     };
 
-    // Function to show the overlay with the specified section
     function showOverlay(section) {
-        // Hide all sections first
         aboutSection.classList.remove("active");
         projectsSection.classList.remove("active");
         
-        // Show the overlay and the relevant section
         overlay.classList.remove("hidden");
         setTimeout(() => {
             overlay.classList.add("active");
             section.classList.add("active");
         }, 10);
 
-        // Initialize simulations if projects section is shown
         if (section === projectsSection) {
             doublePendulumSimulation();
             blochSphereSimulation();
-            galaxySimulation(); // Ensure this initializes the galaxy simulation
+            galaxySimulation(); 
         }
     }
 
-    // Function to hide the overlay
     function hideOverlay() {
         overlay.classList.remove("active");
         setTimeout(() => {
@@ -124,25 +116,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 500);
     }
 
-    // Function to show the README modal
     function showReadmeModal(simulation) {
         latexContent.innerHTML = latexEquations[simulation];
-        MathJax.typesetPromise(); // Render the LaTeX content
+        MathJax.typesetPromise(); 
         readmeModal.style.display = "flex";
         setTimeout(() => {
-            readmeModal.classList.add("active"); // Trigger fade-in effect
+            readmeModal.classList.add("active"); 
         }, 10);
     }
 
-    // Function to hide the README modal
     function hideReadmeModal() {
         readmeModal.classList.remove("active");
         setTimeout(() => {
             readmeModal.style.display = "none";
-        }, 300); // Match this delay to the transition duration
+        }, 300); 
     }
 
-    // Attach event listeners to buttons
     aboutBtn.addEventListener("click", function() {
         showOverlay(aboutSection);
     });
@@ -153,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeButton.addEventListener("click", hideOverlay);
     
-    // Event listener for README buttons
     document.querySelectorAll(".readme-button").forEach(button => {
         button.addEventListener("click", function() {
             const simulation = this.getAttribute("data-simulation");
@@ -161,17 +149,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Event listener for modal close button
     modalCloseButton.addEventListener("click", hideReadmeModal);
 
-    // Close modal on clicking outside of it
     window.addEventListener("click", function(event) {
         if (event.target === readmeModal) {
             hideReadmeModal();
         }
     });
 
-    // Optional: Close overlay on 'Escape' key press
     document.addEventListener("keydown", function(event) {
         if (event.key === "Escape") {
             if (overlay.classList.contains("active")) {
@@ -182,4 +167,29 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll('.project-card');
+    let currentIndex = 0;
+
+    function showCard(index) {
+        currentIndex = (index + cards.length) % cards.length;  
+        cards.forEach((card, i) => {
+            card.style.display = 'none'; 
+            card.classList.remove('active');
+        });
+        cards[currentIndex].style.display = 'block';
+        setTimeout(() => cards[currentIndex].classList.add('active'), 10); 
+    }
+
+    document.getElementById('arrowDown').addEventListener('click', function() {
+        showCard(currentIndex + 1);
+    });
+
+    document.getElementById('arrowUp').addEventListener('click', function() {
+        showCard(currentIndex - 1);
+    });
+
+    showCard(0);
 });

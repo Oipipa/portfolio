@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const distSq = dx * dx + dy * dy;
         const dist = Math.sqrt(distSq);
 
-        if (dist < 1) return [0, 0]; // Prevent division by zero
+        if (dist < 1) return [0, 0]; 
 
         let force;
         if (dist < ACCRETION_DISK_RADIUS) {
@@ -161,16 +161,16 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', resizeCanvas);
 
     function mainLoop() {
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas without filling it
+    
         particles.forEach(particle => {
             updateParticle(particle);
             particle.draw();
         });
-
+    
         requestAnimationFrame(mainLoop);
     }
+    
 
     document.getElementById('numParticles').addEventListener('input', function() {
         NUM_PARTICLES = this.value;

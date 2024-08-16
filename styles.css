@@ -49,7 +49,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +73,6 @@ button:hover {
     max-width: 600px;
     overflow-y: auto;
     max-height: 80vh;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -106,7 +105,8 @@ button:hover {
     z-index: 101;
 }
 
-.close-button::before, .close-button::after {
+.close-button::before,
+.close-button::after {
     content: '';
     position: absolute;
     width: 24px;
@@ -155,7 +155,8 @@ button:hover {
     z-index: 101;
 }
 
-.about-text {
+.about-text,
+.about-extra {
     width: 35%;
     height: 100%;
     overflow-y: auto;
@@ -168,13 +169,6 @@ button:hover {
 
 .about-extra {
     width: 63%;
-    height: 100%;
-    overflow-y: auto;
-    color: #ffe7d6;
-    text-align: left;
-    font-family: 'Caudex', serif;
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -185,8 +179,8 @@ button:hover {
         top: 20%;
         left: 0;
     }
-
-    .about-text, .about-extra {
+    .about-text,
+    .about-extra {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
@@ -232,7 +226,6 @@ button:hover {
     }
 }
 
-
 #controls {
     display: flex;
     flex-wrap: wrap;
@@ -245,11 +238,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 150px; 
+    min-width: 150px;
 }
 
 #controls label {
-    font-size: 0.9em; 
+    font-size: 0.9em;
     color: #ffe7d6;
     font-family: 'Caudex', serif;
     margin-bottom: 5px;
@@ -257,9 +250,9 @@ button:hover {
 
 #controls input[type="range"] {
     -webkit-appearance: none;
-    width: 150px; 
-    height: 4px; 
-    background: #ff0000; 
+    width: 150px;
+    height: 4px;
+    background: #ff0000;
     border-radius: 5px;
     outline: none;
     transition: background-color 0.2s, transform 0.1s;
@@ -268,7 +261,7 @@ button:hover {
 #controls input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px; 
+    width: 12px;
     height: 12px;
     background: #ffe7d6;
     border-radius: 50%;
@@ -277,8 +270,8 @@ button:hover {
 }
 
 #controls input[type="range"]::-webkit-slider-thumb:hover {
-    background: #ff8080; 
-    transform: scale(1.2); 
+    background: #ff8080;
+    transform: scale(1.2);
 }
 
 #controls input[type="range"]::-moz-range-thumb {
@@ -297,15 +290,13 @@ button:hover {
 
 @media (max-width: 600px) {
     .control-group {
-        flex-basis: 100%; 
+        flex-basis: 100%;
         align-items: stretch;
     }
-
     #controls {
-        gap: 10px; 
+        gap: 10px;
     }
 }
-
 
 .projects-title {
     font-family: 'Daydream', sans-serif;
@@ -327,8 +318,8 @@ button:hover {
     align-items: flex-start;
     width: 60%;
     height: auto;
-    gap: 20px;
     z-index: 101;
+    gap: 5vw;
 }
 
 .project-item {
@@ -336,21 +327,21 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;  
-    max-width: 45%;  
+    flex: 1;
+    max-width: 45%;
 }
 
 .project-item h3 {
     color: #73464c;
-    font-family: 'Caudex', serif;
+    font-family: 'Daydream', serif;
     margin-bottom: 10px;
     text-align: center;
 }
 
 canvas {
     border: 2px;
-    width: 100%;  
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
 
 .projects-contents {
@@ -370,17 +361,14 @@ canvas {
         flex-direction: column;
         align-items: center;
     }
-
     .project-item {
-        width: 100%;  
-        max-width: 100%;  
+        width: 100%;
+        max-width: 100%;
     }
-
     canvas {
         width: 100%;
-        height: auto; 
+        height: auto;
     }
-
     .projects-contents {
         top: auto;
         bottom: 5%;
@@ -413,21 +401,21 @@ canvas {
     display: none;
     position: fixed;
     z-index: 105;
-    left: 50%; 
-    top: 50%; 
-    transform: translate(-50%, -50%); 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 800px;
-    max-height: 80%; 
-    overflow-y: auto; 
-    background-color: #000000; 
+    max-height: 80%;
+    overflow-y: auto;
+    background-color: #000000;
     padding: 20px;
-    border: 2px solid #a8275d; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); 
+    border: 2px solid #a8275d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    color: #ffe7d6; 
+    color: #ffe7d6;
     font-family: 'Caudex', serif;
-    animation: fadeIn 0.5s ease; 
+    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -440,11 +428,11 @@ canvas {
 }
 
 .modal .close {
-    color: #a8275d; 
-    position: absolute; 
+    color: #a8275d;
+    position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 30px; 
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -452,47 +440,88 @@ canvas {
 
 .modal .close:hover,
 .modal .close:focus {
-    color: #ff8080; 
+    color: #ff8080;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-content h3 {
     font-family: 'Daydream', sans-serif;
-    font-size: 1.8rem; 
-    color: #a8275d; 
+    font-size: 1.8rem;
+    color: #a8275d;
     margin-bottom: 10px;
-    text-align: center; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .modal-content h4 {
     font-family: 'Caudex', serif;
-    font-size: 1.5rem; 
-    color: #73464c; 
+    font-size: 1.5rem;
+    color: #73464c;
     margin-top: 20px;
     margin-bottom: 10px;
-    text-align: left; 
-    border-bottom: 2px solid #a8275d; 
-    padding-bottom: 5px; 
+    text-align: left;
+    border-bottom: 2px solid #a8275d;
+    padding-bottom: 5px;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
-    margin-top: 30px; 
-    padding: 20px; 
+.projects-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
 }
 
 .project-card {
-    background-color: #000000; 
-    border: 2px solid #ff0000; 
-    border-radius: 10px; 
-    padding: 15px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    display: none;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.arrow-controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 20px;
+}
+
+.arrow-controls button {
+    background: none;
+    border: none;
+    color: #73464c;
+    font-size: 24px;
+    cursor: pointer;
+    font-family: 'Daydream', sans-serif;
+    padding: 10px;
+    text-shadow: 1px 1px 0 #ff0000, 2px 2px 0 #000000;
+}
+
+.arrow-controls button:hover {
+    color: #ff0000;
+    text-shadow: 1px 1px 0 #ffe7d6, 2px 2px 0 #ff0000;
+}
+
+.arrow-controls button:focus {
+    outline: none;
+}
+
+.arrow-controls button:active {
+    transform: translateY(2px);
 }
 
 .project-card h4 {
@@ -511,112 +540,37 @@ canvas {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(1, 1fr); 
-    }
+#gameOfLifeCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: transparent;
 }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(1, 1fr); 
-    }
+#lavaLampCanvasContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
 }
 
-@media (max-width: 500px) {
-    .projects-grid {
-        grid-template-columns: 1fr; 
-    }
-
-    .project-card {
-        padding: 10px; 
-    }
-
-    .project-card h4 {
-        font-size: 1.3rem; 
-    }
-
-    .project-card p {
-        font-size: 0.9rem; 
-    }
-}
-
-@media (max-width: 768px) {
-    .overlay {
-        position: absolute; 
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh; 
-        background-color: rgba(0, 0, 0, 0.9); 
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-        z-index: 100;
-        overflow-y: auto;
-    }
-
-    .overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .content {
-        color: #ffe7d6;
-        text-align: center;
-        position: relative;
-        padding: 20px;
-        width: 90%;
-        max-width: 600px;
-        max-height: 80vh; 
-        overflow-y: auto; 
-        margin-top: 20px; 
-        background-color: #1e1e1e; 
-        border-radius: 10px;
-    }
-
-    .about-content,
-    .projects-simulations {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        display: block; 
-    }
-
-    .about-title,
-    .projects-title {
-        font-size: 1.5rem;
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 10px 0;
-    }
-    
-    .close-button {
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-    }
-}
-
-@media (max-width: 500px) {
-    .content {
-        width: 95%; 
-        padding: 10px; 
-    }
-    
-    .close-button {
-        width: 25px;
-        height: 25px;
-    }
+#briansBrainCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
