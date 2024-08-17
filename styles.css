@@ -503,12 +503,12 @@ canvas {
 .arrow-controls button {
     background: none;
     border: none;
-    color: #73464c;
+    color: #ff0000;
     font-size: 24px;
     cursor: pointer;
     font-family: 'Daydream', sans-serif;
     padding: 10px;
-    text-shadow: 1px 1px 0 #ff0000, 2px 2px 0 #000000;
+    text-shadow: 1px 1px 0 #ffd1dc, 2px 2px 0 #000000;
 }
 
 .arrow-controls button:hover {
