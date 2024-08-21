@@ -1,7 +1,14 @@
+let gameOfLifeRunning = false;
+
 function startGameOfLife() {
+    if (gameOfLifeRunning) return;
+
+    gameOfLifeRunning = true;
+
     const canvas = document.createElement('canvas');
     canvas.id = 'gameOfLifeCanvas';
     const container = document.getElementById('gameOfLifeCanvasContainer');
+    container.innerHTML = ''; // Clear the container
     container.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
@@ -10,12 +17,11 @@ function startGameOfLife() {
     canvas.width = width;
     canvas.height = height;
 
-    const cellSize = 10; 
-    const rows = 80;
-    const cols = 80;
+    const cellSize = 15;
+    const rows = Math.floor(height / cellSize);
+    const cols = Math.floor(width / cellSize);
 
     let grid = createGrid(rows, cols);
-    let nextGrid = createGrid(rows, cols);
 
     function createGrid(rows, cols) {
         const arr = new Array(rows);
@@ -28,27 +34,27 @@ function startGameOfLife() {
     function initializeGrid() {
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
-                grid[i][j] = Math.random() > 0.8 ? 1 : 0; 
+                grid[i][j] = Math.random() > 0.8 ? 1 : 0;
             }
         }
     }
 
     function updateGrid() {
+        const nextGrid = createGrid(rows, cols);
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
-                let aliveNeighbors = countAliveNeighbors(grid, i, j);
+                const aliveNeighbors = countAliveNeighbors(grid, i, j);
 
                 if (grid[i][j] === 1 && (aliveNeighbors < 2 || aliveNeighbors > 3)) {
-                    nextGrid[i][j] = 0; 
+                    nextGrid[i][j] = 0;
                 } else if (grid[i][j] === 0 && aliveNeighbors === 3) {
-                    nextGrid[i][j] = 1; 
+                    nextGrid[i][j] = 1;
                 } else {
-                    nextGrid[i][j] = grid[i][j]; 
+                    nextGrid[i][j] = grid[i][j];
                 }
             }
         }
-
-        [grid, nextGrid] = [nextGrid, grid];
+        grid = nextGrid;
     }
 
     function countAliveNeighbors(grid, x, y) {
@@ -66,7 +72,7 @@ function startGameOfLife() {
 
     function renderGrid() {
         ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)'; 
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
 
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
@@ -78,6 +84,7 @@ function startGameOfLife() {
     }
 
     function gameLoop() {
+        if (!gameOfLifeRunning) return;
         updateGrid();
         renderGrid();
         requestAnimationFrame(gameLoop);
@@ -86,18 +93,20 @@ function startGameOfLife() {
     initializeGrid();
     gameLoop();
 }
+
 function stopGameOfLife() {
-    gameOfLifeRunning = false; 
+    gameOfLifeRunning = false;
     const canvas = document.getElementById('gameOfLifeCanvas');
     if (canvas) {
-        canvas.remove(); 
+        canvas.remove();
     }
 }
 
 document.getElementById("aboutBtn").addEventListener("click", function() {
+    stopBriansBrain();
     startGameOfLife();
 });
 
 document.getElementById("closeButton").addEventListener("click", function() {
-stopGameOfLife();
+    stopGameOfLife();
 });

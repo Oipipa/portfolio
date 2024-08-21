@@ -110,7 +110,6 @@ function drawQubitState(ctx, theta, phi, rotationX, rotationY, width, height, ca
         ctx.fill();
     }
 
-    // Draw projections on XY, XZ, YZ planes
     const projXY = project3DTo2D(x, y, 0, width, height, cameraPos);
     const projXZ = project3DTo2D(x, 0, z, width, height, cameraPos);
     const projYZ = project3DTo2D(0, y, z, width, height, cameraPos);

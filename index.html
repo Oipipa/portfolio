@@ -20,6 +20,11 @@
 </head>
 <body>
     <div class="landing-page">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="res/output.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
         <h1>Hi, I am Anubhav</h1>
         <div class="buttons">
             <button id="aboutBtn">About</button>
@@ -28,7 +33,7 @@
     </div>
     
     <div id="overlay" class="overlay hidden">
-        <div id="gameOfLifeCanvasContainer"></div> <!-- Container for Conway's Game of Life -->
+        <div id="gameOfLifeCanvasContainer"></div>
         <div id="aboutCanvasContainer"></div>
         <div class="content">
             <div id="closeButton" class="close-button"></div>
@@ -37,8 +42,9 @@
                 <h2 class="about-title">About</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Placeholder Placeholder Placeholder like Placeholder Placeholder like Placeholder</p>
-                        <p>Placeholder Placeholder Placeholder like Placeholder Placeholder like Placeholder</p>
+                        <p>I am a computer science student currently based in Austria. This website serves as a central showcase for my portfolio and all my recent projects.</p>
+                        <p>You can find my technical qualifications <a href="cv.html">here</a> and if you would like to explore the details of my project, you can navigate to the projects section <a href="index.html">here</a>.</p>
+                        <p>Feel free to play around with the simulations, just don't push the numbers too hard if your computer can't handle it.</p>
                     </div>
                     <div id="gravitySimulation">
                         <canvas id="simulationCanvas" width="800" height="800"></canvas>
@@ -80,15 +86,28 @@
             
                         <div class="project-card active">
                             <div class="card-content">
-                                <h4>Project Title 1</h4>
-                                <button class="readme-button" data-simulation="doublePendulum">README</button>
+                                <h4>A Snake's Maze</h4>
+                                <button class="readme-button" data-simulation="proceduralMazeSolver">README</button>
                             </div>
                         </div>
             
                         <div class="project-card">
                             <div class="card-content">
-                                <h4>Project Title 2</h4>
-                                <button class="readme-button" data-simulation="doublePendulum">README</button>
+                                <h4>Procedural City</h4>
+                                <button class="readme-button" data-simulation="proceduralCity">README</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="card-content">
+                                <h4>Generalized Cellular Automaton</h4>
+                                <button class="readme-button" data-simulation="cellularAutomaton">README</button>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="card-content">
+                                <h4>University Projects</h4>
+                                <button class="readme-button" data-simulation="universityProjects">README</button>
                             </div>
                         </div>
                         <div class="arrow-controls">
