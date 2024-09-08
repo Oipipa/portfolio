@@ -314,6 +314,10 @@ A back-end application that uses geographical reasoning to parse queries for a h
             }
         }
     });
+
+    document.getElementById('cv-button').addEventListener('click', function() {
+        window.location.href = 'cv.html';
+    });    
 });
 
 document.addEventListener("DOMContentLoaded", function() {
