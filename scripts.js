@@ -211,29 +211,40 @@ document.addEventListener("DOMContentLoaded", function() {
         </p>
         `,
         cellularAutomaton: `
-<h4>What Is a Cellular Automaton?</h4>
-<p>A cellular automaton (CA) is a model used to simulate how simple rules can lead to complex patterns and behaviors over time. Imagine a grid made up of tiny squares, like a chessboard but with many more squares. Each square is called a “cell,” and it can be in one of several states, like "on" or "off," "alive" or "dead," or different colors.</p>
+        <h4>What Is a Cellular Automaton?</h4>
+        <p>A cellular automaton (CA) is a model used to simulate how simple rules can lead to complex patterns and behaviors over time. Imagine a grid made up of tiny squares, like a chessboard but with many more squares. Each square is called a “cell,” and it can be in one of several states, like "on" or "off," "alive" or "dead," or different colors.</p>
 
-These cells don’t live in isolation. Each cell’s future depends on the state of its neighboring cells, according to a set of rules. These rules are like the “laws of nature” in the cellular automaton’s world, dictating how each cell changes from one moment to the next, some rules leading to turing complete systems, even.</p>
+        These cells don’t live in isolation. Each cell’s future depends on the state of its neighboring cells, according to a set of rules. These rules are like the “laws of nature” in the cellular automaton’s world, dictating how each cell changes from one moment to the next, some rules leading to turing complete systems, even.</p>
 
-<p><strong>The backgrounds within this overlay and the other one are two variations of cellular automata: this being brian's brain and the other being the famous conway's game of life.</strong></p>
+        <p><strong>The backgrounds within this overlay and the other one are two variations of cellular automata: this being brian's brain and the other being the famous conway's game of life.</strong></p>
 
-<h4>Project Description</h4>
-<p>Using the turing complete nature of Conway's game of life to simulate some cool phenomenon (technologies used: golly, python and some very basic assembly for writing algorithms in a low-level setting. A tokenizer made in python capable of tokenizing low-level code to instructions for the automaton. The architecture itself is scaleable but it is worth noting that I did not make it myself as I have used existing attempts to
-simulate computer systems in gol as a reference and have also used (slightly modified) an existing tokenizer used for simulating algorithms in factorio.</p>
-<h4>Examples</h4>
-<img src="res/display.png" width="800" height="600">
-This is an example display grid for output representation.
-<video src="res/12.mp4" width="800" height="600" loop muted autoplay></video>
-A group of self-sustaining pixels. 
+        <h4>Project Description</h4>
+        <p>Using the turing complete nature of Conway's game of life to simulate some cool phenomenon (technologies used: golly, python and some very basic assembly for writing algorithms in a low-level setting. A tokenizer made in python capable of tokenizing low-level code to instructions for the automaton. The architecture itself is scaleable but it is worth noting that I did not make it myself as I have used existing attempts to
+        simulate computer systems in gol as a reference and have also used (slightly modified) an existing tokenizer used for simulating algorithms in factorio.</p>
+        <h4>Examples</h4>
+        <img src="res/display.png" width="800" height="600">
+        This is an example display grid for output representation.
+        <video src="res/12.mp4" width="800" height="600" loop muted autoplay></video>
+        A group of self-sustaining pixels. 
         `,
         universityProjects: `
-<h4>The Villain Management App</h4>
-A RESTful API with a simple, cute interface that uses the MVC pattern to facilitate CRUD operations on villains including data validation. The repository for this is public and can be found <a href="https://github.com/Oipipa/villain-management">here</a>
-<h4>Multiplayer turn-based Game</h4>
-A python-based game that uses websockets to create network protocols, state validation and parallel processing to faciliate a turn-based multiplayer game. Features include matchmaking, parallel state transmissions and a somewhat mediocre turn-based game mechanic.
-<h4>Train Ticketing System</h4>
-A back-end application that uses geographical reasoning to parse queries for a hypothetical train network.
+        <h4>The Villain Management App</h4>
+        A RESTful API with a simple, cute interface that uses the MVC pattern to facilitate CRUD operations on villains including data validation. The repository for this is public and can be found <a href="https://github.com/Oipipa/villain-management">here</a>
+        <h4>Multiplayer turn-based Game</h4>
+        A python-based game that uses websockets to create network protocols, state validation and parallel processing to faciliate a turn-based multiplayer game. Features include matchmaking, parallel state transmissions and a somewhat mediocre turn-based game mechanic.
+        <h4>Train Ticketing System</h4>
+        A back-end application that uses geographical reasoning to parse queries for a hypothetical train network.
+        `,
+        precisionAnalysis: `
+        <h4>Precision Analysis of Rare Particle Decay Channels</h4>
+        The primary goal of this project was to identify and analyze rare particle decay channels, particularly those beyond the Standard Model (BSM) predictions, using collision data from the ATLAS detector. In the vast dataset generated by ATLAS, rare decays—such as the possible interactions involving long-lived particles (LLPs) or lepton-flavor violating decays—are often overshadowed by more common Standard Model events.
+        <h4>Data Source</h4>
+        The analysis used the Open Data from the ATLAS Experiment at CERN. Specifically, the project made use of datasets from proton-proton collisions at a center-of-mass energy of 13 TeV, which were recorded during Run 2 of the Large Hadron Collider (LHC). You can find the dataset <a href="https://opendata.cern.ch/record/80000">here</a>.
+        <h4>Approach</h4>
+        <ul>
+        <li>Data Filtering & Selection: Developed a data pipeline to filter through billions of collision events, focusing on identifying signatures specific to these rare decays, such as displaced vertices or anomalous energy distributions.</li>
+        <li>Model Training: Implemented machine learning techniques to classify rare decay events based on existing data from ATLAS, refining models to distinguish these events from noise or more common decays.</li>
+        </ul>
         `
     };
 

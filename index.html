@@ -16,6 +16,11 @@
             font-family: 'Caudex';
             src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
         }
+
+        @font-face {
+            font-family: 'Caudex-C';
+            src: url('fonts/Caudex.ttf') format('truetype');
+        }
     </style>
 </head>
 <body>
@@ -85,14 +90,21 @@
                     </div>
             
                     <div class="projects-container">
-            
+
+                        <div class="project-card">
+                            <div class="card-content">
+                                <h4>Precision Analysis ATLAS</h4>
+                                <button class="readme-button" data-simulation="precisionAnalysis">README</button>
+                            </div>
+                        </div>
+                        
                         <div class="project-card active">
                             <div class="card-content">
                                 <h4>A Snake's Maze</h4>
                                 <button class="readme-button" data-simulation="proceduralMazeSolver">README</button>
                             </div>
                         </div>
-            
+
                         <div class="project-card">
                             <div class="card-content">
                                 <h4>Procedural City</h4>
@@ -106,12 +118,14 @@
                                 <button class="readme-button" data-simulation="cellularAutomaton">README</button>
                             </div>
                         </div>
+
                         <div class="project-card">
                             <div class="card-content">
                                 <h4>University Projects</h4>
                                 <button class="readme-button" data-simulation="universityProjects">README</button>
                             </div>
                         </div>
+
                         <div class="arrow-controls">
                             <button id="arrowUp">&#9664;</button> 
                             <button id="arrowDown">&#9654;</button> 

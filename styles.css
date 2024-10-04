@@ -366,7 +366,7 @@ canvas {
     margin-right: auto;
     text-align: center;
     color: #73464c;
-    font-family: 'Caudex', serif;
+    font-family: 'Caudex-C', serif;
 }
 
 @media (max-width: 768px) {
@@ -427,7 +427,7 @@ canvas {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     color: #ffe7d6;
-    font-family: 'Caudex', serif;
+    font-family: 'Caudex-C', serif;
     animation: fadeIn 0.5s ease;
 }
 
@@ -469,7 +469,7 @@ canvas {
 }
 
 .modal-content h4 {
-    font-family: 'Caudex', serif;
+    font-family: 'Caudex-C', serif;
     font-size: 1.5rem;
     color: #73464c;
     margin-top: 20px;
