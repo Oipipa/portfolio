@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById('cv-button').addEventListener('click', function() {
-        window.location.href = 'cv.html';
+        window.location.href = 'CV.pdf';
     });    
 });
 

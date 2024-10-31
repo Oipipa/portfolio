@@ -30,7 +30,7 @@ a {
 h1 {
     font-family: 'Daydream', sans-serif;
     font-size: 3rem;
-    color: rgba(255, 0, 0);
+    color: #eb6b6f;
     padding-top: 35vh;
 }
 
@@ -41,9 +41,9 @@ h1 {
 button {
     font-family: 'Daydream', sans-serif;
     font-size: 1.5rem;
-    color: rgba(255, 0, 0);
+    color: #eb6b6f;
     background-color: transparent;
-    border: 2px solid rgba(255, 0, 0);
+    border: 2px solid #eb6b6f;
     border-radius: 15px;
     padding: 10px 20px;
     margin: 10px;
@@ -52,8 +52,8 @@ button {
 }
 
 button:hover {
-    background-color: rgba(255, 0, 0);
-    color: #ffe7d6;
+    background-color: #eb6b6f;
+    color: #fff6d3;
 }
 
 .overlay {
@@ -62,7 +62,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0);
+    background-color: #fff6d3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ button:hover {
 }
 
 .content {
-    color: #ffe7d6;
+    color: #7c3f58;
     text-align: center;
     position: relative;
     padding: 20px;
@@ -108,13 +108,11 @@ button:hover {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background-color: #ff0000;
-    border: 3px solid #000000;
+    background-color: #eb6b6f;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 3px #000000;
     z-index: 101;
 }
 
@@ -124,7 +122,7 @@ button:hover {
     position: absolute;
     width: 24px;
     height: 3px;
-    background-color: #000000;
+    background-color: #fff6d3;
 }
 
 .close-button::before {
@@ -148,7 +146,7 @@ button:hover {
 .about-title {
     font-family: 'Daydream', sans-serif;
     font-size: 2rem;
-    color: #ff0000;
+    color: #eb6b6f;
     position: fixed;
     top: 5%;
     left: 5%;
@@ -173,7 +171,7 @@ button:hover {
     width: 35%;
     height: 100%;
     overflow-y: auto;
-    color: #ffe7d6;
+    color: #7c3f58;
     text-align: left;
     font-family: 'Caudex', serif;
     font-size: 1rem;
@@ -219,7 +217,7 @@ button:hover {
 }
 
 #gravitySimulation::-webkit-scrollbar-track {
-    background: #ffe7d6;
+    background: #000000;
     border-radius: 10px;
 }
 
@@ -256,7 +254,7 @@ button:hover {
 
 #controls label {
     font-size: 0.9em;
-    color: #ffe7d6;
+    color: #eb6b6f;
     font-family: 'Caudex', serif;
     margin-bottom: 5px;
 }
@@ -265,7 +263,7 @@ button:hover {
     -webkit-appearance: none;
     width: 150px;
     height: 4px;
-    background: #ff0000;
+    background: #eb6b6f;
     border-radius: 5px;
     outline: none;
     transition: background-color 0.2s, transform 0.1s;
@@ -276,7 +274,7 @@ button:hover {
     appearance: none;
     width: 12px;
     height: 12px;
-    background: #ffe7d6;
+    background: #7c3f58;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
@@ -314,7 +312,7 @@ button:hover {
 .projects-title {
     font-family: 'Daydream', sans-serif;
     font-size: 2rem;
-    color: #ff0000;
+    color: #eb6b6f;
     position: fixed;
     top: 5%;
     left: 5%;
@@ -366,7 +364,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: #73464c;
+    color: #eb6b6f;
     font-family: 'Caudex-C', serif;
 }
 
@@ -397,7 +395,7 @@ canvas {
 
 .slider-container label {
     font-family: 'Caudex', serif;
-    color: #73464c;
+    color: #eb6b6f;
     margin-right: 10px;
 }
 
@@ -407,7 +405,7 @@ canvas {
 
 .slider-container span {
     font-family: 'Caudex', serif;
-    color: #73464c;
+    color: #eb6b6f;
     margin-left: 10px;
 }
 
@@ -422,12 +420,12 @@ canvas {
     max-width: 800px;
     max-height: 80%;
     overflow-y: auto;
-    background-color: #000000;
+    background-color: #fff6d3;
     padding: 20px;
     border: 2px solid #a8275d;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    color: #ffe7d6;
+    color: #7c3f58;
     font-family: 'Caudex-C', serif;
     animation: fadeIn 0.5s ease;
 }
@@ -462,7 +460,7 @@ canvas {
 .modal-content h3 {
     font-family: 'Daydream', sans-serif;
     font-size: 1.8rem;
-    color: #a8275d;
+    color: #eb6b6f;
     margin-bottom: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -472,11 +470,11 @@ canvas {
 .modal-content h4 {
     font-family: 'Caudex-C', serif;
     font-size: 1.5rem;
-    color: #73464c;
+    color: #eb6b6f;
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: left;
-    border-bottom: 2px solid #a8275d;
+    border-bottom: 2px solid #eb6b6f;
     padding-bottom: 5px;
 }
 
@@ -493,10 +491,10 @@ canvas {
     display: none;
     width: 100%;
     padding: 20px;
-    border: 2px solid #ff0000;
+    border: 2px solid #eb6b6f;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #000000;
+    background-color: #fff6d3;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -517,7 +515,7 @@ canvas {
 .arrow-controls button {
     background: none;
     border: none;
-    color: #ffffff;
+    color: #f9a875;
     font-size: 24px;
     cursor: pointer;
     font-family: 'Daydream', sans-serif;
@@ -526,7 +524,7 @@ canvas {
 }
 
 .arrow-controls button:hover {
-    color: #ff0000;
+    color: #eb6b6f;
     text-shadow: 1px 1px 0 #ffe7d6, 2px 2px 0 #ff0000;
 }
 
@@ -541,7 +539,7 @@ canvas {
 .project-card h4 {
     font-family: 'Daydream', sans-serif;
     font-size: 1.8rem;
-    color: #a8275d;
+    color: #7c3f58;
     margin-bottom: 10px;
 }
 

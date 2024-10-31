@@ -128,7 +128,7 @@ function doublePendulumSimulation() {
         ctx.scale(scaleX, scaleY);
         ctx.translate(width / (2 * scaleX), height / (2 * scaleY));
 
-        ctx.strokeStyle = 'red';
+        ctx.strokeStyle = '#7c3f58'; // Darker purple for path1
         ctx.beginPath();
         path1.forEach(([px, py], index) => {
             if (index === 0) ctx.moveTo(px, py);
@@ -136,7 +136,7 @@ function doublePendulumSimulation() {
         });
         ctx.stroke();
 
-        ctx.strokeStyle = 'blue';
+        ctx.strokeStyle = '#f9a875'; // Peach color for path2
         ctx.beginPath();
         path2.forEach(([px, py], index) => {
             if (index === 0) ctx.moveTo(px, py);
@@ -144,7 +144,7 @@ function doublePendulumSimulation() {
         });
         ctx.stroke();
 
-        ctx.strokeStyle = 'white';
+        ctx.strokeStyle = '#eb6b6f'; // Reddish-pink for pendulum arms
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(x1, y1);
@@ -155,7 +155,7 @@ function doublePendulumSimulation() {
         ctx.lineTo(x2, y2);
         ctx.stroke();
 
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = '#eb6b6f'; // Reddish-pink for pendulum masses
         ctx.beginPath();
         ctx.arc(x1, y1, 5, 0, 2 * Math.PI);
         ctx.fill();

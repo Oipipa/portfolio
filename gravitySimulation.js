@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 particle.vy *= 0.99;
             }
 
-            const brightness = Math.min(255, 255 * (ACCRETION_DISK_RADIUS / distance_to_center));
+            const brightness = Math.min(107, 107 * (ACCRETION_DISK_RADIUS / distance_to_center));
             particle.color = `rgb(${brightness}, ${brightness}, ${brightness})`;
 
             particle.update();
@@ -136,9 +136,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const [vx, vy] = initialVelocity(x, y, PARTICLE_MASS);
 
-            let color = 'white';
+            let color = 'black';
             if (r < ACCRETION_DISK_RADIUS) {
-                color = 'rgb(255, 100, 100)';
+                color = 'rgb(235, 107, 111)';
             }
 
             particles.push(new Particle(x, y, vx, vy, PARTICLE_MASS, color));
