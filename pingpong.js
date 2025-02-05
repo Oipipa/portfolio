@@ -13,7 +13,7 @@ let ballSpeedX = 50
 let ballSpeedY = 50
 
 let tileSize = 20
-let snake = [{x:10,y:10}]
+let snake = [{ x: 10, y: 10 }]
 let snakeFrameCount = 0
 let snakeMoveInterval = 1
 
@@ -22,6 +22,9 @@ function setupPingPong() {
   pingCtx = pingCanvas.getContext('2d')
   resizeCanvasPing()
   resetPositionsPing()
+  // Start with paddles centered
+  paddle1Y = (pingCanvas.height - paddleHeight) / 2
+  paddle2Y = (pingCanvas.height - paddleHeight) / 2
   window.addEventListener('resize', resizeCanvasPing)
 }
 
@@ -68,6 +71,7 @@ function moveBall() {
   ballY += ballSpeedY
   if (ballY - ballRadius < 0 && ballSpeedY < 0) ballSpeedY = -ballSpeedY
   if (ballY + ballRadius > pingCanvas.height && ballSpeedY > 0) ballSpeedY = -ballSpeedY
+
   if (ballX - ballRadius <= paddleWidth) {
     if (ballY > paddle1Y && ballY < paddle1Y + paddleHeight) {
       handlePaddleCollision(paddle1Y)
@@ -91,38 +95,53 @@ function handlePaddleCollision(paddleY) {
   ballSpeedX = -ballSpeedX * 1.01
 }
 
-function moveAIPaddles() {
-  let targetY1 = predictBallY(0) - paddleHeight / 2
-  if (targetY1 < 0) targetY1 = 0
-  if (targetY1 > pingCanvas.height - paddleHeight) targetY1 = pingCanvas.height - paddleHeight
-  paddle1Y += (targetY1 - paddle1Y) * 0.06
+function predictBallYAnalytic(paddleSide) {
+  if (ballSpeedX === 0) return { predictedY: pingCanvas.height / 2, T: Infinity }
 
-  let targetY2 = predictBallY(pingCanvas.width) - paddleHeight / 2
-  if (targetY2 < 0) targetY2 = 0
-  if (targetY2 > pingCanvas.height - paddleHeight) targetY2 = pingCanvas.height - paddleHeight
-  paddle2Y += (targetY2 - paddle2Y) * 0.06
+  let targetX
+  if (paddleSide === 'left') {
+    if (ballSpeedX > 0) return { predictedY: pingCanvas.height / 2, T: Infinity }
+    targetX = paddleWidth + ballRadius
+  } else { 
+    if (ballSpeedX < 0) return { predictedY: pingCanvas.height / 2, T: Infinity }
+    targetX = pingCanvas.width - paddleWidth - ballRadius
+  }
+
+  let T = (targetX - ballX) / ballSpeedX
+  if (T < 0) return { predictedY: pingCanvas.height / 2, T: Infinity }
+
+  let predictedY = ballY + ballSpeedY * T
+
+  let minY = ballRadius
+  let maxY = pingCanvas.height - ballRadius
+  let range = maxY - minY
+
+  let normalized = predictedY - minY
+  normalized = normalized % (2 * range)
+  if (normalized < 0) normalized += 2 * range
+  if (normalized > range) {
+    predictedY = maxY - (normalized - range)
+  } else {
+    predictedY = minY + normalized
+  }
+
+  return { predictedY, T }
 }
 
-function predictBallY(px) {
-  let sx = ballX
-  let sy = ballY
-  let svx = ballSpeedX
-  let svy = ballSpeedY
-  let tx = px < pingCanvas.width / 2 ? paddleWidth : pingCanvas.width - paddleWidth
-  let c = 0
-  while(true) {
-    sx += svx
-    sy += svy
-    if (sy - ballRadius < 0 && svy < 0) svy = -svy
-    if (sy + ballRadius > pingCanvas.height && svy > 0) svy = -svy
-    if (sx - ballRadius < 0) break
-    if (sx + ballRadius > pingCanvas.width) break
-    if (px < pingCanvas.width / 2 && sx - ballRadius < tx) return sy
-    if (px > pingCanvas.width / 2 && sx + ballRadius > tx) return sy
-    c++
-    if (c > 5000) break
-  }
-  return pingCanvas.height / 2
+function moveAIPaddles() {
+  let { predictedY: targetY1Raw, T: T1 } = predictBallYAnalytic('left')
+  let targetY1 = targetY1Raw - paddleHeight / 2
+  targetY1 = clamp(targetY1, 0, pingCanvas.height - paddleHeight)
+
+  let baseFactor = 0.1
+  let factor1 = T1 < 30 ? baseFactor + ((30 - T1) / 30) * 0.1 : baseFactor
+  paddle1Y += (targetY1 - paddle1Y) * factor1
+
+  let { predictedY: targetY2Raw, T: T2 } = predictBallYAnalytic('right')
+  let targetY2 = targetY2Raw - paddleHeight / 2
+  targetY2 = clamp(targetY2, 0, pingCanvas.height - paddleHeight)
+  let factor2 = T2 < 30 ? baseFactor + ((30 - T2) / 30) * 0.1 : baseFactor
+  paddle2Y += (targetY2 - paddle2Y) * factor2
 }
 
 function moveSnake() {
@@ -162,7 +181,7 @@ function getNextCellBFS(sx, sy, tx, ty, gw, gh) {
   while (q.length) {
     let [cx, cy] = q.shift()
     if (cx === tx && cy === ty) break
-    let dirs = [[1,0],[-1,0],[0,1],[0,-1]]
+    let dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]]
     for (let d of dirs) {
       let nx = cx + d[0]
       let ny = cy + d[1]
@@ -194,14 +213,18 @@ function getNextCellBFS(sx, sy, tx, ty, gw, gh) {
 }
 
 function drawEverything() {
-  pingCtx.clearRect(0,0,pingCanvas.width,pingCanvas.height)
-  pingCtx.fillStyle='#fff'
-  pingCtx.fillRect(0,paddle1Y,paddleWidth,paddleHeight)
-  pingCtx.fillRect(pingCanvas.width - paddleWidth,paddle2Y,paddleWidth,paddleHeight)
+  pingCtx.clearRect(0, 0, pingCanvas.width, pingCanvas.height)
+  pingCtx.fillStyle = '#fff'
+  pingCtx.fillRect(0, paddle1Y, paddleWidth, paddleHeight)
+  pingCtx.fillRect(pingCanvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight)
   pingCtx.beginPath()
-  pingCtx.arc(ballX,ballY,ballRadius,0,Math.PI*2,true)
+  pingCtx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2, true)
   pingCtx.fill()
-  for(let i=0;i<snake.length;i++){
-    pingCtx.fillRect(snake[i].x*tileSize,snake[i].y*tileSize,tileSize,tileSize)
+  for (let i = 0; i < snake.length; i++) {
+    pingCtx.fillRect(snake[i].x * tileSize, snake[i].y * tileSize, tileSize, tileSize)
   }
+}
+
+function clamp(val, min, max) {
+  return Math.max(min, Math.min(max, val))
 }
