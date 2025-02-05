@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <section class="section hero" id="hero">
+      <canvas id="gameCanvas"></canvas>
+      <div class="hero-content">
+        <h1 class="title">Hi, I'm Anubhav</h1>
+        <p class="subtitle">Want to know more about me?</p>
+        <div class="scroll-indicator">
+            <svg class="scroll-arrow" viewBox="0 0 24 24">
+              <path d="M12 4v13M18 11l-6 6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+      </div>
+    </section>
+    <section class="section about" id="about">
+      <canvas id="pendulumCanvas"></canvas>
+      <div class="section-content">
+        <h2>About Me</h2>
+        <p>I'm a bachelor's student studying Computer Science. I like math among other things.</p>
+      </div>
+      <div id="pendulumLog" class="pendulum-logger"></div>
+    </section>
+    <section class="section projects" id="projects">
+        <video id="projectsVideo" class="projects-video" autoplay muted loop>
+            <source src="output.mp4" type="video/mp4">
+          </video>
+      <div class="projects-container">
+        <h2>My Projects</h2>
+        <div class="card-container">
+          <div class="arrow-button" id="cardLeftBtn">&#x25C0;</div>
+          <div class="card-flip" id="cardFlip">
+            <div class="card" id="projectCard">
+              <div class="flip-inner" id="flipInner">
+                <div class="card-front" id="cardFront">
+                  <h3 id="projectTitle">Project Title</h3>
+                  <button id="readmeBtn">Read Me</button>
+                </div>
+                <div class="card-back" id="cardBack">
+                  <h3>Tech Stack</h3>
+                  <ul id="techStackList"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arrow-button" id="cardRightBtn">&#x25B6;</div>
+        </div>
+      </div>
+      <div id="projectModal" class="modal">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <h3 id="modalTitle">Title</h3>
+          <p id="modalDescription">Description</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="carousel-indicator">
+    <div class="indicator-dot" data-target="#hero"></div>
+    <div class="indicator-dot" data-target="#about"></div>
+    <div class="indicator-dot" data-target="#projects"></div>
+  </div>
+  <script src="pingpong.js"></script>
+  <script src="pendulum.js"></script>
+  <script src="cardflip.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
