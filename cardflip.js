@@ -3,6 +3,12 @@ let isAnimating = false
 
 let projectsData = [
   {
+    title: "Villain Management App",
+    techStack: ["Javascript", "Cloud Computing"],
+    description: 
+    "<ul><li>A serverless web application enabling users to sign up, log in, and upload pictures and descriptions of their favorite villains.</li> <li>Built with AWS Lambda for backend logic, API Gateway for routing, and S3 for secure image storage.</li> <li>Implements DynamoDB for user and villain data management</li></ul>"
+  },
+  {
     title: "Anti-VM Malware and Obfuscation detector",
     techStack: ["C/C++", "CPUID", "Ghidra"],
     description: 
@@ -27,6 +33,11 @@ let projectsData = [
     title: "LED Snake Game",
     techStack: ["Arduino", "C/C++"],
     description: "An embedded systems project for engineering a matrix of LED lights to move a snake along the path of illuminating LEDs to simulate the snake game. <br> <br> The project can be found <a href=https://github.com/Oipipa/8x8-LED-snake.git>here</a>"
+  },
+  {
+    title: "RFID-Based Access Control System",
+    techStack: ["Raspberry Pi", "C/C++", "ChibiOS"],
+    description: "<ul><li> Designed a secure RFID-based access control system using an ESP32 microcontroller and MFRC522 RFID module to regulate entry to restricted lab areas.</li><li>Implemented AES-256 encryption to securely store and transmit user credentials to a PostgreSQL database hosted on a Raspberry Pi server</li><li>Developed a Python-based backend with Flask to manage access logs and provide real-time monitoring of entry attempts.</li><li>Optimized database queries using indexing and caching techniques, reducing authentication time from 500ms to 200ms.</li></ul>"
   }
 ]
 

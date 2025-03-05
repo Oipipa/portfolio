@@ -16,6 +16,7 @@ html, body {
 
 .section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -369,4 +370,60 @@ html, body {
   60% {
     transform: translate(-50%, -5px);
   }
+}
+
+.tech-stack-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tech-item {
+  background: linear-gradient(135deg, #333 0%, #444 100%);
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px); 
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.tech-item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.tech-item span {
+  font-size: 1rem;
+  text-align: left;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0.2);
+  }
+}
+
+.tech-item:nth-child(1) { animation-delay: 0.2s; }
+.tech-item:nth-child(2) { animation-delay: 0.4s; }
+.tech-item:nth-child(3) { animation-delay: 0.6s; }
+.tech-item:nth-child(4) { animation-delay: 0.8s; }
+
+.tech-item:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #444 0%, #555 100%);
 }
