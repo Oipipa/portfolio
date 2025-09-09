@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Villain Management App",
+    "techStack": ["Javascript", "Cloud Computing"],
+    "description": "<ul><li>A serverless web application enabling users to sign up, log in, and upload pictures and descriptions of their favorite villains.</li> <li>Built with AWS Lambda for backend logic, API Gateway for routing, and S3 for secure image storage.</li> <li>Implements DynamoDB for user and villain data management</li></ul>"
+  },
+  {
+    "title": "Anti-VM Malware and Obfuscation detector",
+    "techStack": ["C/C++", "CPUID", "Ghidra"],
+    "description": "Devised a toy 'malware' capable of retrieving system-level artefacts to deduce a virtual environment. Then, devised a binary analyzer capable of generating detailed reports. <br> <br> The project can be found <a href=https://github.com/Oipipa/anti-vm.git>here</a>"
+  },
+  {
+    "title": "Room Defense System",
+    "techStack": ["Arduino", "C/C++", "Sensors"],
+    "description": "An Arduino-based room defense system uses a PIR motion sensor and a laser tripwire to detect intrusions, triggering an alarm and optionally activating a servo lock mechanism. It can also include an LCD display for status updates and remote notifications for real-time alerts."
+  },
+  {
+    "title": "Maze-Solving Snake",
+    "techStack": ["Python", "Heuristics", "C++"],
+    "description": "Developed a maze-solving AI using a randomized DFS algorithm and a specialized A* algorithm, resulting in a 30% faster pathfinding solution compared to traditional methods. <br><br> The project can be found <a href=https://github.com/Oipipa/maze-solving-snake.git>here</a>"
+  },
+  {
+    "title": "Custom Communication Protocol",
+    "techStack": ["Python", "TCP/UDP"],
+    "description": "A university project that implemented a simple messaging protocol (SIMP) over UDP using a client-daemon architecture, enabling users to initiate, accept, and conduct text-based conversations with reliability mechanisms such as a three-way handshake, stop-and-wait retransmission, and timeout handling. The daemon manages communication, enforces protocol rules, and interacts with the client via TCP, while a shell script simplifies testing by automating daemon and client startup."
+  },
+  {
+    "title": "LED Snake Game",
+    "techStack": ["Arduino", "C/C++"],
+    "description": "An embedded systems project for engineering a matrix of LED lights to move a snake along the path of illuminating LEDs to simulate the snake game. <br> <br> The project can be found <a href=https://github.com/Oipipa/8x8-LED-snake.git>here</a>"
+  },
+  {
+    "title": "RFID-Based Access Control System",
+    "techStack": ["Raspberry Pi", "C/C++", "ChibiOS"],
+    "description": "<ul><li> Designed a secure RFID-based access control system using an ESP32 microcontroller and MFRC522 RFID module to regulate entry to restricted lab areas.</li><li>Implemented AES-256 encryption to securely store and transmit user credentials to a PostgreSQL database hosted on a Raspberry Pi server</li><li>Developed a Python-based backend with Flask to manage access logs and provide real-time monitoring of entry attempts.</li><li>Optimized database queries using indexing and caching techniques, reducing authentication time from 500ms to 200ms.</li></ul>"
+  }
+]

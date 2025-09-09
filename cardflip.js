@@ -2,43 +2,138 @@ let projectIndex = 0
 let isAnimating = false
 
 let projectsData = [
-  {
-    title: "Villain Management App",
-    techStack: ["Javascript", "Cloud Computing"],
-    description: 
-    "<ul><li>A serverless web application enabling users to sign up, log in, and upload pictures and descriptions of their favorite villains.</li> <li>Built with AWS Lambda for backend logic, API Gateway for routing, and S3 for secure image storage.</li> <li>Implements DynamoDB for user and villain data management</li></ul>"
+    {
+    title: "Nepal Incident Reporting Platform",
+    techStack: ["FastAPI", "Postgres", "NextJS", "Websockets", "GeoJSON"],
+    description: `
+    Source code at <a href="https://github.com/Oipipa/protest_backend.git">here</a> and <a href="https://github.com/Oipipa/status-dispay.git">here</a> (Not in production)
+      <ul>
+        <li>Incident/road blockage reporting application for the September 2025 protest in Nepal.</li>
+        <li>Features allowed users to place pins on Nepal's map to pinpoint and speak out on their issue. </li>
+        <li>Websockets used to continuously update due to the sensitive nature of the situation.</li>
+      </ul>
+    <img
+        src="demos/nepal.png"
+        alt="Bytsey homepage"
+        loading="lazy" decoding="async"
+        style="
+          display:block;
+          max-width:100%;
+          width:100%;
+          height:auto;
+          max-height:60vh;         /* never taller than the viewport */
+          background:#000;         /* looks clean if it doesn’t fill */
+          border-radius:8px;
+          margin-top:12px;
+        "
+      />
+    `
+  },
+              {
+    title: "EEG Emotional State Classification",
+    techStack: ["Ensembling Methods", "Tensorflow", "Numpy", "Matplotlib", "Logistic Regression"],
+    description: `
+    Notebooks and report are over <a href="https://github.com/Oipipa/EEG-emotional-state-classifier.git">here</a>
+      <ul>
+<li>Built an end-to-end EEG classification pipeline in Python; aggregated raw time-series signals into tabular
+form by computing band power features (delta to gamma) via Welch's method.</li>
+<li>Generated 22 domain-specific features (20 brain, 2 machine) and trained multiple classifiers; CNN achieved
+top accuracy (96%), outperforming Random Forest, XGBoost, and SVM models.</li>
+<li>Applied cross-validation, dropout regularization, and early stopping to prevent overfitting; validated results
+across held-out test sets.</li>
+<li>Demonstrated that deep models could generalize EEG-based intent detection with minimal preprocessing
+and hand-crafted features.</li>
+      </ul>
+
+      <img
+        src="demos/Jupyternotebook.png"
+        alt="Bytsey homepage"
+        loading="lazy" decoding="async"
+        style="
+          display:block;
+          max-width:100%;
+          width:100%;
+          height:auto;
+          max-height:60vh;         /* never taller than the viewport */
+          background:#000;         /* looks clean if it doesn’t fill */
+          border-radius:8px;
+          margin-top:12px;
+        "
+      />
+    `
   },
   {
-    title: "Anti-VM Malware and Obfuscation detector",
-    techStack: ["C/C++", "CPUID", "Ghidra"],
-    description: 
-    "Devised a toy 'malware' capable of retrieving system-level artefacts to deduce a virtual environment. Then, devised a binary analyzer capable of generating detailed reports. <br> <br> The project can be found <a href=https://github.com/Oipipa/anti-vm.git>here</a>"
+    title: "Bytsey Artstore",
+    techStack: ["NextJS", "EmailJS", "Color Theory"],
+    description: `
+    Deployed <a href="https://bytsey.vercel.app/">here</a>
+      <ul>
+        <li>Built and designed an artstore with a dynamically shifting colour palette moving along a spectrum.</li>
+        <li>Used EmailJS to redirect clients to email to inquire about specific products.</li>
+      </ul>
+
+      <video controls playsinline
+            style="display:block;width:100%;max-width:100%;height:auto;max-height:60vh;
+                    background:#000;border-radius:8px;margin-top:12px;">
+        <source src="demos/bytsey.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `
   },
-  {
-    title: "Room Defense System",
-    techStack: ["Arduino", "C/C++", "Sensors"],
-    description: "An Arduino-based room defense system uses a PIR motion sensor and a laser tripwire to detect intrusions, triggering an alarm and optionally activating a servo lock mechanism. It can also include an LCD display for status updates and remote notifications for real-time alerts."
+      {
+    title: "Flood Monitoring Application",
+    techStack: ["Express", "Angular", "GeoJSON", "MongoDB", "Websockets"],
+    description: `
+    Deployed at <a href="https://floodmonitoring.fly.dev/">here</a>
+      <ul>
+        <li>Built a flood monitoring system in Austria, integrating real-time water level data into a map.</li>
+        <li>Basic Authentication method (email, OTP, registered, make flood reports)</li>
+      </ul>
+
+      <img
+        src="demos/Flood.png"
+        alt="Bytsey homepage"
+        loading="lazy" decoding="async"
+        style="
+          display:block;
+          max-width:100%;
+          width:100%;
+          height:auto;
+          max-height:60vh;         /* never taller than the viewport */
+          background:#000;         /* looks clean if it doesn’t fill */
+          border-radius:8px;
+          margin-top:12px;
+        "
+      />
+    `
   },
-  {
-    title: "Maze-Solving Snake",
-    techStack: ["Python", "Heuristics", "C++"],
-    description: "Developed a maze-solving AI using a randomized DFS algorithm and a specialized A* algorithm, resulting in a 30% faster pathfinding solution compared to traditional methods. <br><br> The project can be found <a href=https://github.com/Oipipa/maze-solving-snake.git>here</a>"
-  },
-  {
-    title: "Custom Communication Protocol",
-    techStack: ["Python", "TCP/UDP"],
-    description: "A university project that implemented a simple messaging protocol (SIMP) over UDP using a client-daemon architecture, enabling users to initiate, accept, and conduct text-based conversations with reliability mechanisms such as a three-way handshake, stop-and-wait retransmission, and timeout handling. The daemon manages communication, enforces protocol rules, and interacts with the client via TCP, while a shell script simplifies testing by automating daemon and client startup."
-  },
-  {
-    title: "LED Snake Game",
-    techStack: ["Arduino", "C/C++"],
-    description: "An embedded systems project for engineering a matrix of LED lights to move a snake along the path of illuminating LEDs to simulate the snake game. <br> <br> The project can be found <a href=https://github.com/Oipipa/8x8-LED-snake.git>here</a>"
-  },
-  {
-    title: "RFID-Based Access Control System",
-    techStack: ["Raspberry Pi", "C/C++", "ChibiOS"],
-    description: "<ul><li> Designed a secure RFID-based access control system using an ESP32 microcontroller and MFRC522 RFID module to regulate entry to restricted lab areas.</li><li>Implemented AES-256 encryption to securely store and transmit user credentials to a PostgreSQL database hosted on a Raspberry Pi server</li><li>Developed a Python-based backend with Flask to manage access logs and provide real-time monitoring of entry attempts.</li><li>Optimized database queries using indexing and caching techniques, reducing authentication time from 500ms to 200ms.</li></ul>"
-  }
+        {
+    title: "AutoCensor in MP3 Files",
+    techStack: ["FastAPI", "PyDub", "WhisperModel", "NextJS"],
+    description: `
+    Deployed at <a href="https://mp3-censor.vercel.app/">here</a>
+      <ul>
+        <li>Detects words in an mp3, generates diagnostics and auto censors selected words</li>
+        <li>Allows users to adjust padding before/after words, beep frequency, add custom SFX for censoring. </li>
+      </ul>
+
+      <img
+        src="demos/mp3_censor.png"
+        alt="Bytsey homepage"
+        loading="lazy" decoding="async"
+        style="
+          display:block;
+          max-width:100%;
+          width:100%;
+          height:auto;
+          max-height:60vh;         /* never taller than the viewport */
+          background:#000;         /* looks clean if it doesn’t fill */
+          border-radius:8px;
+          margin-top:12px;
+        "
+      />
+    `
+        }
 ]
 
 let projectCard, flipInner, cardFront, cardBack, projectTitle, readmeBtn, techStackList
