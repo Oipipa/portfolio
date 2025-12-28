@@ -1,0 +1,159 @@
+{
+  "name": "Anubhav Lamsal",
+  "tagline": "Computer Science undergraduate based in Vienna/Austria",
+  "contacts": {
+    "email": "333anubhav@gmail.com",
+    "github": "https://github.com/Oipipa",
+    "linkedin": "https://www.linkedin.com/in/anubhav-lamsal-a32805296/"
+  },
+  "experience": [
+    {
+      "role": "Software Engineering Intern",
+      "company": "Adola AI",
+      "dates": "08/2025 - 05/2026 (Ongoing)",
+      "highlights": [
+        "Contributed to an existing backend for an OpenAI LLM (GPT Realtime) voicebot that automates customer calls, appointment bookings, and storage bookings via an MCP tool-call server, service APIs, and webhook integrations.",
+        "Engineered an async TTL cache with race-safe, signal-based refresh; reduced appointment-slot lookup latency from ~1 s (remote calls) to ~7 ms (in-memory reads).",
+        "Implemented caller phone-extraction by analyzing OpenAI payload shapes and generalizing object attributes into robust regular expressions.",
+        "Enabled session-level customer-data prefetch and faster LLM context injection; reduced lookup delays from ~3 s of awkward pauses to uninterrupted conversation.",
+        "Collaborated on an architectural change proposal to merge isolated services (call-handling server and MCP server) into a single deployment unit using custom routes to handle call flow within the MCP application.",
+        "Converted unstructured customer CSV data into reusable domain entities and Pydantic models for safer, structured use across services."
+      ],
+      "tags": [
+        "Python",
+        "FastAPI",
+        "FastMCP",
+        "asyncio",
+        "anyio",
+        "Pydantic",
+        "OpenAI APIs",
+        "Webhooks",
+        "Docker",
+        "Traefik",
+        "Git",
+        "JIRA",
+        "Confluence"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Informatics",
+      "institution": "IMC FH Krems",
+      "dates": "2023 — 2026 (In progress)",
+      "highlights": [
+        "Ongoing program (approx. 30 ECTS remaining).",
+        "Merit-based scholarship awarded by the board for outstanding academic performance (Academic Year 2024).",
+        "Relevant coursework: OOP, full-stack web development, distributed systems, operating systems, data mining, machine learning, probability theory, linear algebra, software engineering practices (tools and methods)."
+      ],
+      "tags": [
+        "Software Engineering",
+        "Distributed Systems",
+        "Operating Systems",
+        "Machine Learning",
+        "Data Mining",
+        "Probability",
+        "Linear Algebra"
+      ]
+    },
+    {
+      "degree": "Languages",
+      "institution": "",
+      "dates": "",
+      "highlights": [
+        "English (C2)",
+        "German (B1)",
+        "Nepali (C2)",
+        "Hindi (C1)"
+      ],
+      "tags": []
+    },
+    {
+      "degree": "Certifications",
+      "institution": "Codecademy",
+      "dates": "",
+      "highlights": [
+        "Profile and certifications: https://www.codecademy.com/profiles/anubhavipa0217"
+      ],
+      "tags": [
+        "Data Science",
+        "Machine Learning",
+        "Feature Engineering",
+        "Python"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Full-stack Flood Monitoring Application",
+      "summary": "Flood monitoring application using a 3-tier architecture with map visualization of hourly Austrian water-level datasets.",
+      "highlights": [
+        "Built a 3-tier system: Angular SPA (Leaflet) + Node.js/Express REST API + MongoDB; ingested and served hourly datasets with GeoJSON map layers.",
+        "Implemented signup/login/logout, Express auth middleware, and secure cookie/JWT sessions for protected, role-based routes.",
+        "Designed the database schema, automated CI/CD with GitHub Actions, containerized with Docker, coordinated SCRUM work, and built an Electron admin tool for database control."
+      ],
+      "links": {
+        "demo": "https://floodmonitoring.fly.dev/"
+      },
+      "tags": [
+        "Angular",
+        "Leaflet",
+        "GeoJSON",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Docker",
+        "GitHub Actions",
+        "Electron",
+        "JIRA",
+        "CORS"
+      ]
+    },
+    {
+      "name": "EEG-Based Emotional State Classification",
+      "summary": "Researching whether emotional states can be predicted from EEG signals via feature engineering and deep learning.",
+      "highlights": [
+        "Reviewed prior EEG emotion-classification work to guide preprocessing, spectral feature selection, and baseline comparisons.",
+        "Started with 100 raw time-series features and engineered 22 tabular features (delta-gamma band power via Welch and Fourier transforms).",
+        "Benchmarked RF, XGBoost, and SVM; a CNN achieved 96% accuracy.",
+        "Improved rigor with k-fold cross-validation, dropout, early stopping, and signal/label integrity checks."
+      ],
+      "links": {
+        "github": "https://github.com/Oipipa/EEG-emotional-state-classifier",
+        "report": "https://github.com/Oipipa/EEG-emotional-state-classifier/blob/main/REPORT.pdf"
+      },
+      "tags": [
+        "Python",
+        "NumPy",
+        "SciPy",
+        "pandas",
+        "scikit-learn",
+        "XGBoost",
+        "PyTorch",
+        "Digital Signal Processing",
+        "Fourier Transforms",
+        "Git"
+      ]
+    },
+    {
+      "name": "Bytsey Artstore",
+      "summary": "Responsive, vintage-themed e-commerce UI built with Next.js, featuring a palette-based image color-shift effect and a lightweight contact workflow.",
+      "highlights": [
+        "Built a responsive UI with reusable components, client-side routing, and pure CSS animations.",
+        "Implemented a clustering-based color-shift feature that maps image colors to a selected palette and applies gradient transformations in JavaScript.",
+        "Created a contact form that sends product inquiries directly to the owner’s email with no backend overhead; deployed on Vercel."
+      ],
+      "links": {
+        "demo": "https://bytsey.vercel.app/"
+      },
+      "tags": [
+        "Next.js",
+        "React",
+        "JavaScript",
+        "CSS",
+        "Vercel"
+      ]
+    }
+  ],
+  "statusText": ""
+}

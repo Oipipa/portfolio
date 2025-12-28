@@ -1,0 +1,349 @@
+:root {
+  --bg: #c9d6f1;
+  --bg-alt: #b6c7ea;
+  --surface: #f1f3f7;
+  --border-dark: #7a7a7a;
+  --border-mid: #a8a8a8;
+  --border-light: #ffffff;
+  --title-blue: #0047b2;
+  --title-text: #ffffff;
+  --text: #1b1b1b;
+  --accent: #0a63f6;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --card-width: 100%;
+  font-family: 'Tahoma', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg), var(--bg-alt));
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.background-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.desktop {
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+}
+
+.window {
+  background: var(--surface);
+  border: 2px solid var(--border-dark);
+  box-shadow: 8px 8px 0 var(--border-dark), 12px 12px 0 #4f4f4f;
+  position: relative;
+}
+
+.title-bar {
+  background: linear-gradient(90deg, var(--title-blue), #0a4da9);
+  color: var(--title-text);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-dark);
+}
+
+.title-bar-text {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-btn {
+  width: 20px;
+  height: 20px;
+  border: 2px outset var(--border-light);
+  background: var(--surface);
+  color: #111;
+  font-weight: 700;
+  padding: 0;
+  line-height: 16px;
+}
+
+.control-btn.close {
+  color: #b40000;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 16px 10px;
+  gap: 16px;
+}
+
+.profile h1 {
+  margin: 4px 0;
+  font-size: 26px;
+}
+
+.profile p {
+  margin: 4px 0;
+}
+
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 4px;
+  color: #2c2c2c;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 2px solid var(--border-dark);
+  border-right-color: var(--border-light);
+  border-bottom-color: var(--border-light);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: inset -2px -2px 0 var(--border-dark), inset 2px 2px 0 var(--border-light);
+}
+
+.contact-links a:hover {
+  background: #d8e6ff;
+}
+
+.tabstrip {
+  display: inline-flex;
+  gap: 4px;
+  padding: 0 12px;
+  margin-bottom: 6px;
+  border-bottom: 2px solid var(--border-dark);
+}
+
+.tab {
+  border: 2px solid var(--border-dark);
+  border-right-color: var(--border-light);
+  border-bottom: none;
+  background: #dcdcdc;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: inset -2px -2px 0 var(--border-dark), inset 2px 2px 0 var(--border-light);
+}
+
+.tab.active {
+  background: var(--surface);
+  box-shadow: inset -2px -2px 0 var(--border-light), inset 2px 2px 0 var(--border-dark);
+}
+
+.panel {
+  padding: 10px 16px 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.panel-header h2 {
+  margin: 0 0 6px;
+}
+
+.hint {
+  margin: 0;
+  font-size: 13px;
+}
+
+.carousel {
+  background: var(--surface);
+  border: 2px solid var(--border-dark);
+  border-right-color: var(--border-light);
+  border-bottom-color: var(--border-light);
+  box-shadow: inset -4px -4px 0 var(--border-dark), inset 4px 4px 0 var(--border-light);
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.card-slot:focus {
+  outline: 2px dashed var(--accent);
+  outline-offset: 6px;
+}
+
+.card {
+  background: #f5f5f5;
+  border: 2px solid var(--border-dark);
+  border-right-color: var(--border-light);
+  border-bottom-color: var(--border-light);
+  padding: 16px;
+  box-shadow: inset -3px -3px 0 var(--border-dark), inset 3px 3px 0 var(--border-light);
+  min-height: 200px;
+  width: 100%;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.card .meta {
+  color: #333;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.card ul {
+  margin: 0 0 12px 18px;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background: #dce6f7;
+  padding: 4px 8px;
+  border: 1px solid var(--border-dark);
+  font-size: 12px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.control {
+  padding: 8px 12px;
+  border: 2px solid var(--border-dark);
+  border-right-color: var(--border-light);
+  border-bottom-color: var(--border-light);
+  background: #dcdcdc;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: inset -2px -2px 0 var(--border-dark), inset 2px 2px 0 var(--border-light);
+}
+
+.control:active {
+  box-shadow: inset 2px 2px 0 var(--border-dark), inset -2px -2px 0 var(--border-light);
+}
+
+.indicator {
+  font-weight: 700;
+  min-width: 70px;
+  text-align: center;
+}
+
+.status-bar {
+  display: none;
+  align-items: center;
+  padding: 8px 12px;
+  background: #efefef;
+  border-top: 2px solid var(--border-dark);
+  font-size: 13px;
+}
+
+button:focus,
+.tab:focus,
+.contact-links a:focus,
+.control:focus {
+  outline: 2px dotted #000;
+  outline-offset: 1px;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 12px;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .window {
+    box-shadow: none;
+  }
+
+  .tabstrip {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    flex: 1 1 48%;
+    text-align: center;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carousel-controls {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .indicator {
+    order: -1;
+  }
+}
