@@ -1,5 +1,3 @@
-import { startBackgroundSnake } from './src/easteregg/snake.js';
-
 const state = {
   content: null,
   carousels: {
@@ -44,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function init() {
-  startBackgroundSnake();
   try {
     const content = await loadContent();
     state.content = content;
