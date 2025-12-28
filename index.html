@@ -21,7 +21,7 @@
 
       <div class="profile">
         <div>
-          <p class="eyebrow">Now Loading</p>
+          <p class="eyebrow" id="profile-eyebrow">Now loading</p>
           <h1 id="profile-name">Portfolio</h1>
           <p id="profile-tagline">Personal site booting...</p>
         </div>
@@ -29,35 +29,18 @@
       </div>
 
       <div class="tabstrip" role="tablist" aria-label="Portfolio sections">
-        <button role="tab" id="tab-education" aria-controls="panel-education" aria-selected="true" tabindex="0" class="tab active">Education</button>
-        <button role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="false" tabindex="-1" class="tab">Experience</button>
+        <button role="tab" id="tab-experience" aria-controls="panel-experience" aria-selected="true" tabindex="0" class="tab active">Experience</button>
         <button role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1" class="tab">Projects</button>
+        <button role="tab" id="tab-education" aria-controls="panel-education" aria-selected="false" tabindex="-1" class="tab">Education</button>
       </div>
 
-      <div class="panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education">
-        <header class="panel-header">
-          <div>
-            <h2>Education</h2>
-          </div>
-          <p class="hint">Highlights from IMC FH studies.</p>
-        </header>
-        <div class="carousel" data-type="education">
-          <div class="card-slot" id="education-card" tabindex="-1"></div>
-          <div class="carousel-controls">
-            <button class="control" data-action="prev" data-type="education" aria-label="Previous education">◀ Prev</button>
-            <span class="indicator" id="education-indicator" aria-live="polite">0 / 0</span>
-            <button class="control" data-action="next" data-type="education" aria-label="Next education">Next ▶</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" hidden>
+      <div class="panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience">
         <header class="panel-header">
           <div>
             <p class="eyebrow">Career timeline</p>
             <h2>Experience</h2>
           </div>
-          <p class="hint">Use the arrow buttons or keys to browse.</p>
+          <p class="hint">Start here. Use the arrow buttons or keys to browse.</p>
         </header>
         <div class="carousel" data-type="experience">
           <div class="card-slot" id="experience-card" tabindex="-1"></div>
@@ -83,6 +66,23 @@
             <button class="control" data-action="prev" data-type="projects" aria-label="Previous project">◀ Prev</button>
             <span class="indicator" id="projects-indicator" aria-live="polite">0 / 0</span>
             <button class="control" data-action="next" data-type="projects" aria-label="Next project">Next ▶</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" hidden>
+        <header class="panel-header">
+          <div>
+            <h2>Education</h2>
+          </div>
+          <p class="hint">Coursework snapshot and scholarships.</p>
+        </header>
+        <div class="carousel" data-type="education">
+          <div class="card-slot" id="education-card" tabindex="-1"></div>
+          <div class="carousel-controls">
+            <button class="control" data-action="prev" data-type="education" aria-label="Previous education">◀ Prev</button>
+            <span class="indicator" id="education-indicator" aria-live="polite">0 / 0</span>
+            <button class="control" data-action="next" data-type="education" aria-label="Next education">Next ▶</button>
           </div>
         </div>
       </div>

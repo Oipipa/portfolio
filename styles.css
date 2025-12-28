@@ -27,6 +27,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  line-height: 1.5;
 }
 
 .background-canvas {
@@ -98,11 +99,13 @@ body {
 
 .profile h1 {
   margin: 4px 0;
-  font-size: 26px;
+  font-size: 28px;
+  line-height: 1.2;
 }
 
 .profile p {
   margin: 4px 0;
+  line-height: 1.4;
 }
 
 .eyebrow {
@@ -181,6 +184,7 @@ body {
 .hint {
   margin: 0;
   font-size: 13px;
+  color: #2c2c2c;
 }
 
 .carousel {
@@ -207,6 +211,7 @@ body {
   box-shadow: inset -3px -3px 0 var(--border-dark), inset 3px 3px 0 var(--border-light);
   min-height: 200px;
   width: 100%;
+  line-height: 1.5;
 }
 
 .card h3 {
@@ -225,13 +230,14 @@ body {
 }
 
 .card li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin: 6px 0 10px;
 }
 
 .tag {

@@ -7,12 +7,13 @@ const state = {
     projects: { index: 0, items: [] },
     education: { index: 0, items: [] }
   },
-  activeTab: 'education'
+  activeTab: 'experience'
 };
 
 const selectors = {
   title: document.getElementById('title-bar-text'),
   name: document.getElementById('profile-name'),
+  eyebrow: document.getElementById('profile-eyebrow'),
   tagline: document.getElementById('profile-tagline'),
   contactLinks: document.getElementById('contact-links'),
   status: document.getElementById('status-bar'),
@@ -50,6 +51,7 @@ async function init() {
     hydrateIdentity(content);
     setupTabs();
     setupCarousels(content);
+    switchTab(state.activeTab);
     updateStatus(content.statusText ?? '');
   } catch (error) {
     console.error('Failed to load content:', error);
@@ -66,9 +68,13 @@ async function loadContent() {
 }
 
 function hydrateIdentity(content) {
-  selectors.title.textContent = `Portfolio`;
+  selectors.title.textContent = `Portfolio.exe — ${content.name}`;
   selectors.name.textContent = content.name;
   selectors.tagline.textContent = content.tagline;
+  if (selectors.eyebrow) {
+    const firstRole = content.experience?.[0];
+    selectors.eyebrow.textContent = firstRole ? `${firstRole.company} · ${firstRole.dates}` : 'Profile ready';
+  }
   selectors.contactLinks.innerHTML = '';
 
   Object.entries(content.contacts || {}).forEach(([key, value]) => {
@@ -203,16 +209,6 @@ function buildExperienceCard(item) {
   meta.textContent = `${item.company} · ${item.dates}`;
   card.appendChild(meta);
 
-  if (Array.isArray(item.highlights)) {
-    const list = document.createElement('ul');
-    item.highlights.forEach((highlight) => {
-      const li = document.createElement('li');
-      li.textContent = highlight;
-      list.appendChild(li);
-    });
-    card.appendChild(list);
-  }
-
   if (Array.isArray(item.tags) && item.tags.length) {
     const tags = document.createElement('div');
     tags.className = 'tags';
@@ -223,6 +219,16 @@ function buildExperienceCard(item) {
       tags.appendChild(tag);
     });
     card.appendChild(tags);
+  }
+
+  if (Array.isArray(item.highlights)) {
+    const list = document.createElement('ul');
+    item.highlights.forEach((highlight) => {
+      const li = document.createElement('li');
+      li.textContent = highlight;
+      list.appendChild(li);
+    });
+    card.appendChild(list);
   }
 
   return card;
@@ -240,6 +246,18 @@ function buildProjectCard(item) {
   summary.className = 'meta';
   summary.textContent = item.summary;
   card.appendChild(summary);
+
+  if (Array.isArray(item.tags) && item.tags.length) {
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    item.tags.forEach((tagText) => {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = tagText;
+      tags.appendChild(tag);
+    });
+    card.appendChild(tags);
+  }
 
   if (Array.isArray(item.highlights)) {
     const list = document.createElement('ul');
@@ -266,18 +284,6 @@ function buildProjectCard(item) {
     card.appendChild(linksWrap);
   }
 
-  if (Array.isArray(item.tags) && item.tags.length) {
-    const tags = document.createElement('div');
-    tags.className = 'tags';
-    item.tags.forEach((tagText) => {
-      const tag = document.createElement('span');
-      tag.className = 'tag';
-      tag.textContent = tagText;
-      tags.appendChild(tag);
-    });
-    card.appendChild(tags);
-  }
-
   return card;
 }
 
@@ -294,16 +300,6 @@ function buildEducationCard(item) {
   meta.textContent = `${item.institution || ''}${item.dates ? ` · ${item.dates}` : ''}`;
   card.appendChild(meta);
 
-  if (Array.isArray(item.highlights)) {
-    const list = document.createElement('ul');
-    item.highlights.forEach((highlight) => {
-      const li = document.createElement('li');
-      li.textContent = highlight;
-      list.appendChild(li);
-    });
-    card.appendChild(list);
-  }
-
   if (Array.isArray(item.tags) && item.tags.length) {
     const tags = document.createElement('div');
     tags.className = 'tags';
@@ -314,6 +310,16 @@ function buildEducationCard(item) {
       tags.appendChild(tag);
     });
     card.appendChild(tags);
+  }
+
+  if (Array.isArray(item.highlights)) {
+    const list = document.createElement('ul');
+    item.highlights.forEach((highlight) => {
+      const li = document.createElement('li');
+      li.textContent = highlight;
+      list.appendChild(li);
+    });
+    card.appendChild(list);
   }
 
   return card;

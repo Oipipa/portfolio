@@ -1,6 +1,6 @@
 {
   "name": "Anubhav Lamsal",
-  "tagline": "Computer Science undergraduate based in Vienna/Austria",
+  "tagline": "Vienna-based CS undergrad; Backend Intern",
   "contacts": {
     "email": "333anubhav@gmail.com",
     "github": "https://github.com/Oipipa",
@@ -12,12 +12,12 @@
       "company": "Adola AI",
       "dates": "08/2025 - 05/2026 (Ongoing)",
       "highlights": [
-        "Contributed to an existing backend for an OpenAI LLM (GPT Realtime) voicebot that automates customer calls, appointment bookings, and storage bookings via an MCP tool-call server, service APIs, and webhook integrations.",
-        "Engineered an async TTL cache with race-safe, signal-based refresh; reduced appointment-slot lookup latency from ~1 s (remote calls) to ~7 ms (in-memory reads).",
-        "Implemented caller phone-extraction by analyzing OpenAI payload shapes and generalizing object attributes into robust regular expressions.",
-        "Enabled session-level customer-data prefetch and faster LLM context injection; reduced lookup delays from ~3 s of awkward pauses to uninterrupted conversation.",
-        "Collaborated on an architectural change proposal to merge isolated services (call-handling server and MCP server) into a single deployment unit using custom routes to handle call flow within the MCP application.",
-        "Converted unstructured customer CSV data into reusable domain entities and Pydantic models for safer, structured use across services."
+        "Contributed to an OpenAI GPT Realtime voicebot that automates customer calls, appointment bookings, and storage reservations through MCP tool calls, service APIs, and webhook flows.",
+        "Built a race-safe async TTL cache with signal-based refresh; cut appointment-slot lookups from ~1 s network calls to ~7 ms in-memory reads.",
+        "Prefetched session-level customer data so the LLM can speak without ~3 s of dead air, making calls feel human-paced.",
+        "Designed resilient phone-number extraction across OpenAI payload shapes by generalizing attribute patterns into robust regexes.",
+        "Proposed and prototyped merging the call-handling server and MCP server into one deployable unit with custom routes to minimize codebase.",
+        "Converted messy customer CSVs into reusable domain entities and Pydantic models for safer, structured use across services."
       ],
       "tags": [
         "Python",
@@ -54,32 +54,6 @@
         "Data Mining",
         "Probability",
         "Linear Algebra"
-      ]
-    },
-    {
-      "degree": "Languages",
-      "institution": "",
-      "dates": "",
-      "highlights": [
-        "English (C2)",
-        "German (B1)",
-        "Nepali (C2)",
-        "Hindi (C1)"
-      ],
-      "tags": []
-    },
-    {
-      "degree": "Certifications",
-      "institution": "Codecademy",
-      "dates": "",
-      "highlights": [
-        "Profile and certifications: https://www.codecademy.com/profiles/anubhavipa0217"
-      ],
-      "tags": [
-        "Data Science",
-        "Machine Learning",
-        "Feature Engineering",
-        "Python"
       ]
     }
   ],
@@ -155,5 +129,5 @@
       ]
     }
   ],
-  "statusText": ""
+  "statusText": "Start with Experience. Use ←/→ or Prev/Next to browse cards; Tab then Enter to switch sections; Enter opens links."
 }
