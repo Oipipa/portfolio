@@ -8,11 +8,9 @@ window.PORTFOLIO_DATA = {
         email: "333anubhav@gmail.com",
         availability: "Working (Part time), open to opportunities",
         links: [
-            { label: "Portfolio", url: "https://oipipa.github.io/portfolio/" },
             { label: "GitHub", url: "https://github.com/Oipipa" },
             { label: "LinkedIn", url: "https://www.linkedin.com/in/anubhav-lamsal-a32805296/" },
-            { label: "Email", url: "mailto:333anubhav@gmail.com" },
-            { label: "Codecademy", url: "https://www.codecademy.com/profiles/anubhavipa0217" }
+            { label: "Email", url: "mailto:333anubhav@gmail.com" }
         ]
     },
     experience: [
