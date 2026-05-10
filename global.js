@@ -313,6 +313,7 @@ function initSnakeGame() {
     const actionNode = document.getElementById("snake-action");
     const directionNode = document.getElementById("snake-direction");
     const controlButtons = document.querySelectorAll("[data-snake-control]");
+    const modeButton = document.querySelector("[data-snake-mode]");
     const columns = 16;
     const rows = 12;
     const cellSize = canvas.width / columns;
@@ -328,11 +329,14 @@ function initSnakeGame() {
     let snake;
     let food;
     let currentDirection;
+    let queuedDirection;
     let score;
+    let isAutoMode = true;
 
     resetSnake();
     drawSnakeGame();
     window.setInterval(stepSnake, tickDelay);
+    bindSnakeControls();
 
     function resetSnake() {
         snake = [
@@ -342,13 +346,14 @@ function initSnakeGame() {
             { x: 3, y: 6 }
         ];
         currentDirection = directionByName.right;
+        queuedDirection = currentDirection;
         score = 0;
         food = placeFood(snake);
-        updateSnakeConsole(currentDirection, "auto pilot reset");
+        updateSnakeConsole(currentDirection);
     }
 
     function stepSnake() {
-        currentDirection = chooseSnakeDirection();
+        currentDirection = isAutoMode ? chooseSnakeDirection() : queuedDirection;
         const nextHead = {
             x: snake[0].x + currentDirection.x,
             y: snake[0].y + currentDirection.y
@@ -367,13 +372,92 @@ function initSnakeGame() {
         if (ateFood) {
             score += 1;
             food = placeFood(snake);
-            updateSnakeConsole(currentDirection, "bite pixel");
+            updateSnakeConsole(currentDirection);
         } else {
             snake.pop();
-            updateSnakeConsole(currentDirection, `tap ${currentDirection.label}`);
+            updateSnakeConsole(currentDirection);
         }
 
         drawSnakeGame();
+    }
+
+    function bindSnakeControls() {
+        if (modeButton) {
+            modeButton.addEventListener("click", toggleSnakeMode);
+        }
+
+        controlButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                setManualDirection(button.dataset.snakeControl);
+            });
+        });
+
+        window.addEventListener("keydown", (event) => {
+            const keyDirections = {
+                ArrowUp: "up",
+                w: "up",
+                W: "up",
+                ArrowRight: "right",
+                d: "right",
+                D: "right",
+                ArrowDown: "down",
+                s: "down",
+                S: "down",
+                ArrowLeft: "left",
+                a: "left",
+                A: "left"
+            };
+            const directionName = keyDirections[event.key];
+
+            if (!directionName || isAutoMode) {
+                return;
+            }
+
+            event.preventDefault();
+            setManualDirection(directionName);
+        });
+
+        updateSnakeMode();
+    }
+
+    function toggleSnakeMode() {
+        isAutoMode = !isAutoMode;
+        queuedDirection = currentDirection;
+        updateSnakeMode();
+        updateSnakeConsole(currentDirection);
+    }
+
+    function updateSnakeMode() {
+        if (modeButton) {
+            modeButton.textContent = isAutoMode ? "AUTO" : "USER";
+            modeButton.classList.toggle("is-manual", !isAutoMode);
+            modeButton.setAttribute("aria-pressed", isAutoMode ? "true" : "false");
+        }
+        controlButtons.forEach((button) => {
+            button.classList.toggle("is-manual", !isAutoMode);
+        });
+    }
+
+    function setManualDirection(directionName) {
+        if (isAutoMode || !directionByName[directionName]) {
+            return;
+        }
+
+        const direction = directionByName[directionName];
+        if (!canTurn(direction)) {
+            updateSnakeConsole(currentDirection);
+            return;
+        }
+
+        queuedDirection = direction;
+        updateSnakeConsole(direction);
+    }
+
+    function canTurn(direction) {
+        if (snake.length < 2) {
+            return true;
+        }
+        return !sameCell(moveCell(snake[0], direction), snake[1]);
     }
 
     function chooseSnakeDirection() {
@@ -508,12 +592,12 @@ function initSnakeGame() {
         );
     }
 
-    function updateSnakeConsole(direction, action) {
+    function updateSnakeConsole(direction) {
         if (scoreNode) {
             scoreNode.textContent = `score ${score}`;
         }
         if (actionNode) {
-            actionNode.textContent = action;
+            actionNode.textContent = isAutoMode ? "AUTO" : "USER";
         }
         if (directionNode) {
             directionNode.textContent = direction.label;

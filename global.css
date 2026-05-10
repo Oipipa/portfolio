@@ -1027,6 +1027,11 @@ body.portfolio-page .pixels span:nth-child(3) {
     font-size: 0;
 }
 
+.control-button[data-snake-control].is-manual,
+.control-center {
+    cursor: pointer;
+}
+
 .control-button[data-snake-control]::before {
     content: "";
     display: block;
@@ -1069,6 +1074,10 @@ body.portfolio-page .pixels span:nth-child(3) {
     background: #3c3836;
     color: #fbf1c7;
     font-size: 10px;
+}
+
+.control-center.is-manual {
+    background: var(--accent-blue);
 }
 
 .control-right {
