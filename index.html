@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<script defer src="portfolio-data.js"></script>
+<script defer src="global.js"></script>
+</head>
+<body class="portfolio-page">
+<nav class="section-nav" aria-label="Portfolio sections">
+<a href="#about" class="section-dot is-active" data-section-dot="about"><span>About</span></a>
+<a href="#timeline" class="section-dot" data-section-dot="timeline"><span>Timeline</span></a>
+<a href="#projects" class="section-dot" data-section-dot="projects"><span>Projects</span></a>
+</nav>
+
+<main class="snap-container">
+<section class="portfolio-panel about-panel" id="about" aria-labelledby="about-title">
+<div class="panel-inner about-grid">
+<div class="about-copy">
+<p class="eyebrow" id="profile-kicker">PORTFOLIO</p>
+<h1 id="about-title" data-profile="name">Portfolio</h1>
+<p class="portfolio-role" data-profile="role"></p>
+<p class="portfolio-summary" data-profile="summary"></p>
+<div class="profile-facts" id="profile-facts" aria-label="Profile details"></div>
+<div class="link-row" id="profile-links" aria-label="Profile links"></div>
+</div>
+
+<aside class="profile-window" aria-label="Automatic snake game console">
+<div class="window-titlebar">
+<span>game.console</span>
+<span class="pixels" aria-hidden="true"><span></span><span></span><span></span></span>
+</div>
+<div class="profile-visual game-screen">
+<canvas id="snake-game" width="320" height="240" aria-label="Automatic snake game animation"></canvas>
+<div class="game-hud" aria-live="polite">
+<span id="snake-score">score 0</span>
+</div>
+</div>
+<div class="console-controls" aria-label="Automatic snake controls">
+<div class="d-pad">
+<button type="button" class="control-button control-up" data-snake-control="up" aria-label="Snake moving up" tabindex="-1">&uarr;</button>
+<button type="button" class="control-button control-left" data-snake-control="left" aria-label="Snake moving left" tabindex="-1">&larr;</button>
+<button type="button" class="control-button control-center" aria-label="Automatic mode indicator" tabindex="-1">AUTO</button>
+<button type="button" class="control-button control-right" data-snake-control="right" aria-label="Snake moving right" tabindex="-1">&rarr;</button>
+<button type="button" class="control-button control-down" data-snake-control="down" aria-label="Snake moving down" tabindex="-1">&darr;</button>
+</div>
+<div class="console-readout" aria-live="polite">
+<span id="snake-action">auto pilot booting</span>
+<span id="snake-direction">RIGHT</span>
+</div>
+</div>
+</aside>
+</div>
+<div class="scroll-controls">
+<a class="scroll-cue" href="#timeline" aria-label="Go to timeline">&darr;</a>
+</div>
+</section>
+
+<section class="portfolio-panel timeline-panel" id="timeline" aria-labelledby="timeline-title">
+<div class="panel-inner">
+<header class="panel-header">
+<p class="eyebrow">TIMELINE</p>
+<h2 id="timeline-title">Experience &amp; Education</h2>
+<p id="timeline-intro"></p>
+</header>
+
+<div class="timeline-grid">
+<article class="switch-card" aria-labelledby="experience-title">
+<div class="window-titlebar">
+<span id="experience-title">experience.log</span>
+<div class="switch-buttons">
+<button type="button" data-switch="experience" data-direction="-1" aria-label="Previous experience">&larr;</button>
+<button type="button" data-switch="experience" data-direction="1" aria-label="Next experience">&rarr;</button>
+</div>
+</div>
+<div class="switch-body" id="experience-view"></div>
+<div class="switch-status" id="experience-status" aria-live="polite"></div>
+</article>
+
+<article class="switch-card" aria-labelledby="education-title">
+<div class="window-titlebar">
+<span id="education-title">education.log</span>
+<div class="switch-buttons">
+<button type="button" data-switch="education" data-direction="-1" aria-label="Previous education">&larr;</button>
+<button type="button" data-switch="education" data-direction="1" aria-label="Next education">&rarr;</button>
+</div>
+</div>
+<div class="switch-body" id="education-view"></div>
+<div class="switch-status" id="education-status" aria-live="polite"></div>
+</article>
+</div>
+</div>
+<div class="scroll-controls">
+<a class="scroll-cue" href="#about" aria-label="Go to about">&uarr;</a>
+<a class="scroll-cue" href="#projects" aria-label="Go to projects">&darr;</a>
+</div>
+</section>
+
+<section class="portfolio-panel projects-panel" id="projects" aria-labelledby="projects-title">
+<div class="panel-inner">
+<header class="panel-header">
+<p class="eyebrow">SELECTED WORK</p>
+<h2 id="projects-title">Projects</h2>
+<p id="projects-intro"></p>
+<div class="project-toolbar" id="project-toolbar" aria-label="Project page controls" hidden>
+<button type="button" data-project-action="-1" aria-label="Previous projects">&larr;</button>
+<span id="project-status" aria-live="polite">1 / 1</span>
+<button type="button" data-project-action="1" aria-label="Next projects">&rarr;</button>
+</div>
+</header>
+<div class="project-grid" id="project-list"></div>
+</div>
+<div class="scroll-controls">
+<a class="scroll-cue" href="#timeline" aria-label="Go to timeline">&uarr;</a>
+</div>
+</section>
+</main>
+</body>
+</html>
