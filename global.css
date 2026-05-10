@@ -1023,6 +1023,36 @@ body.portfolio-page .pixels span:nth-child(3) {
     letter-spacing: 0;
 }
 
+.control-button[data-snake-control] {
+    font-size: 0;
+}
+
+.control-button[data-snake-control]::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: currentColor;
+    clip-path: polygon(
+        40% 0,
+        60% 0,
+        60% 20%,
+        80% 20%,
+        80% 40%,
+        100% 40%,
+        100% 60%,
+        60% 60%,
+        60% 100%,
+        40% 100%,
+        40% 60%,
+        0 60%,
+        0 40%,
+        20% 40%,
+        20% 20%,
+        40% 20%
+    );
+}
+
 .control-up {
     grid-column: 2;
     grid-row: 1;
@@ -1046,9 +1076,21 @@ body.portfolio-page .pixels span:nth-child(3) {
     grid-row: 2;
 }
 
+.control-right::before {
+    transform: rotate(90deg);
+}
+
 .control-down {
     grid-column: 2;
     grid-row: 3;
+}
+
+.control-down::before {
+    transform: rotate(180deg);
+}
+
+.control-left::before {
+    transform: rotate(-90deg);
 }
 
 .control-button.is-active {
